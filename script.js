@@ -1,0 +1,173 @@
+// Datos configurables
+const config = {
+  church_name: 'Casa del Alfarero',
+  welcome_text: 'Un lugar donde Dios transforma vidas',
+  service_sunday: 'Domingos 9:20 AM',
+  service_wednesday: 'Jueves 6:20 PM',
+  pastor_name: 'Pastor : Pedro Gutierrez Guadamuz',
+  address_text: 'Del tanque de la policia 1c.s,'
+};
+
+// Actualizar textos
+document.getElementById('nav-name').textContent = config.church_name;
+document.getElementById('hero-title').textContent = config.church_name;
+document.getElementById('hero-subtitle').textContent = config.welcome_text;
+document.getElementById('service-sunday').textContent = config.service_sunday;
+document.getElementById('service-wednesday').textContent = config.service_wednesday;
+document.getElementById('pastor-name').textContent = config.pastor_name;
+document.getElementById('address-text').textContent = config.address_text;
+
+const sectionLogoBackgrounds = document.querySelectorAll('.section-logo-bg');
+
+function updateLogoBackgroundOpacity() {
+  const viewportCenter = window.innerHeight / 2;
+  sectionLogoBackgrounds.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    const sectionCenter = rect.top + rect.height / 2;
+    const distance = Math.abs(sectionCenter - viewportCenter);
+    const maxDistance = window.innerHeight;
+    const opacity = Math.max(0.03, 0.12 - (distance / maxDistance) * 0.12);
+    section.style.setProperty('--logo-bg-opacity', opacity.toFixed(3));
+  });
+}
+
+window.addEventListener('scroll', updateLogoBackgroundOpacity);
+window.addEventListener('resize', updateLogoBackgroundOpacity);
+updateLogoBackgroundOpacity();
+
+const heroSlides = document.querySelectorAll('.hero-slide');
+let heroSlideIndex = 0;
+
+function rotateHeroSlides() {
+  if (!heroSlides.length) return;
+  heroSlides[heroSlideIndex].classList.remove('active');
+  heroSlideIndex = (heroSlideIndex + 1) % heroSlides.length;
+  heroSlides[heroSlideIndex].classList.add('active');
+}
+
+setInterval(rotateHeroSlides, 6500);
+
+const albumData = {
+  culto: {
+    title: 'Culto Dominical',
+    description: 'Todas las imágenes de nuestro culto dominical.',
+    images: [
+      'imagenes/Culto/WhatsApp Image 2026-05-04 at 7.17.40 PM (1).jpeg',
+      'imagenes/Culto/WhatsApp Image 2026-05-04 at 7.17.40 PM (2).jpeg',
+      'imagenes/Culto/WhatsApp Image 2026-05-04 at 7.17.40 PM.jpeg',
+      'imagenes/Culto/WhatsApp Image 2026-05-04 at 7.17.41 PM (1).jpeg',
+      'imagenes/Culto/WhatsApp Image 2026-05-04 at 7.17.41 PM (2).jpeg',
+      'imagenes/Culto/WhatsApp Image 2026-05-04 at 7.17.41 PM (3).jpeg',
+      'imagenes/Culto/WhatsApp Image 2026-05-04 at 7.17.41 PM (4).jpeg',
+      'imagenes/Culto/WhatsApp Image 2026-05-04 at 7.17.41 PM.jpeg'
+    ]
+  },
+  misiones: {
+    title: 'Misiones',
+    description: 'Imágenes de nuestras actividades de misiones y servicio.',
+    images: [
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.46 PM (1).jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.46 PM.jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.47 PM.jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.48 PM.jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.51 PM (1).jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.51 PM (2).jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.51 PM.jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.52 PM (1).jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.52 PM.jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.53 PM (1).jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.53 PM (2).jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.53 PM (3).jpeg',
+      'imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.54 PM.jpeg'
+    ]
+  },
+  jovenes: {
+    title: 'Jóvenes',
+    description: 'Álbum completo con todas las imágenes de los encuentros juveniles.',
+    images: [
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.13 PM.jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.14 PM (1).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.14 PM.jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.15 PM (1).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.15 PM (2).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.15 PM (3).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.15 PM (4).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.15 PM (5).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.15 PM.jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.16 PM (1).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.16 PM (2).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.16 PM (3).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.16 PM.jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.17 PM (1).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.17 PM (2).jpeg',
+      'imagenes/Joevenes/WhatsApp Image 2026-05-04 at 7.35.17 PM.jpeg'
+    ]
+  },
+  proyecto: {
+    title: 'Proyecto',
+    description: 'Imágenes de los proyectos y actividades de crecimiento comunitario.',
+    images: [
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.28 PM (1).jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.28 PM (2).jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.29 PM (1).jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.29 PM (2).jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.29 PM (3).jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.29 PM.jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.30 PM (1).jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.30 PM.jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.22.13 PM.jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.22.20 PM.jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.22.21 PM (1).jpeg',
+      'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.22.21 PM.jpeg'
+    ]
+  }
+};
+
+const albumModal = document.getElementById('albumModal');
+const albumModalTitle = document.getElementById('albumModalTitle');
+const albumModalSubtitle = document.getElementById('albumModalSubtitle');
+const albumModalGrid = document.getElementById('albumModalGrid');
+const albumModalClose = document.getElementById('albumModalClose');
+
+function openAlbum(albumKey) {
+  const album = albumData[albumKey];
+  if (!album) return;
+
+  albumModalTitle.textContent = album.title;
+  albumModalSubtitle.textContent = album.description;
+  albumModalGrid.innerHTML = '';
+
+  album.images.forEach((src) => {
+    const item = document.createElement('div');
+    item.className = 'overflow-hidden rounded-3xl bg-slate-100';
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = `${album.title} imagen`;
+    img.className = 'w-full h-full object-cover';
+    item.appendChild(img);
+    albumModalGrid.appendChild(item);
+  });
+
+  albumModal.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAlbum() {
+  albumModal.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+
+albumModalClose.addEventListener('click', closeAlbum);
+albumModal.addEventListener('click', (event) => {
+  if (event.target === albumModal) closeAlbum();
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && !albumModal.classList.contains('hidden')) {
+    closeAlbum();
+  }
+});
+
+document.querySelectorAll('[data-album]').forEach((button) => {
+  button.addEventListener('click', () => openAlbum(button.dataset.album));
+});

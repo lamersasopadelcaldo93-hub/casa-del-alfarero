@@ -1,0 +1,315 @@
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#f5f7fb;
+  color:#111827;
+}
+
+.container{
+  width:90%;
+  max-width:1400px;
+  margin:auto;
+}
+
+.hero{
+  position:relative;
+  padding:90px 0;
+  overflow:hidden;
+
+  background:
+  linear-gradient(rgba(4,15,40,.9),rgba(4,15,40,.9)),
+  url('imagenes/Misiones/WhatsApp Image 2026-05-04 at 7.27.53 PM (1).jpeg');
+
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.top-label{
+  color:#f4c85f;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  color:white;
+  font-size:4.5rem;
+  line-height:1.1;
+  margin-bottom:25px;
+}
+
+.hero h1 span{
+  color:#f4c85f;
+  font-style:italic;
+}
+
+.hero p{
+  color:white;
+  font-size:1.1rem;
+  max-width:700px;
+  margin-bottom:30px;
+}
+
+.verse-box{
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  padding:20px;
+  border-radius:20px;
+  display:flex;
+  gap:15px;
+  color:white;
+}
+
+.verse-box i{
+  color:#f4c85f;
+  font-size:1.5rem;
+}
+
+.hero-card{
+  background:rgba(0,0,0,.25);
+  backdrop-filter:blur(12px);
+  border-radius:24px;
+  padding:30px;
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.hero-item{
+  display:flex;
+  gap:15px;
+  margin-bottom:30px;
+  color:white;
+}
+
+.hero-item:last-child{
+  margin-bottom:0;
+}
+
+.hero-item i{
+  color:#f4c85f;
+  font-size:1.5rem;
+}
+
+.content{
+  margin-top:60px;
+  display:grid;
+  grid-template-columns:1fr 2fr;
+  gap:25px;
+  align-items:start;
+}
+
+.form-card,
+.payment-card,
+.paypal-box{
+  background:white;
+  border-radius:24px;
+  padding:30px;
+  box-shadow:0 10px 40px rgba(0,0,0,.08);
+}
+
+.section-header{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.section-header span{
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  background:#102c57;
+  color:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+.input-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:20px;
+}
+
+.input-group label{
+  margin-bottom:10px;
+  font-weight:600;
+}
+
+.input-group input,
+.input-group textarea,
+.input-group select{
+  padding:15px;
+  border-radius:14px;
+  border:1px solid #d1d5db;
+  font-family:inherit;
+}
+
+textarea{
+  resize:vertical;
+  min-height:120px;
+}
+
+.double-input{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:15px;
+}
+
+.secure-box{
+  background:#fff7e6;
+  border:1px solid #f4d58d;
+  color:#7a5b00;
+  padding:15px;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.bank-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.bank-card{
+  border:1px solid #e5e7eb;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.bank-title{
+  padding:22px;
+  color:white;
+  text-align:center;
+  font-size:2rem;
+  font-weight:800;
+}
+
+.banpro{
+  background:linear-gradient(135deg,#0b8e2c,#18c056);
+}
+
+.lafise{
+  background:linear-gradient(135deg,#00647a,#00a9b8);
+}
+
+.accounts{
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.account{
+  background:#f9fafb;
+  padding:20px;
+  border-radius:18px;
+}
+
+.account h4{
+  color:#0f766e;
+  margin-bottom:15px;
+}
+
+.account p{
+  margin-bottom:10px;
+}
+
+.proof-box{
+  margin-top:25px;
+  display:grid;
+  grid-template-columns:1fr 1fr auto;
+  gap:15px;
+}
+
+.proof-box input{
+  padding:15px;
+  border-radius:12px;
+  border:1px solid #d1d5db;
+}
+
+.proof-box button,
+.paypal-box a{
+  background:linear-gradient(135deg,#102c57,#1d4ed8);
+  color:white;
+  border:none;
+  padding:15px 25px;
+  border-radius:14px;
+  cursor:pointer;
+  text-decoration:none;
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+
+.paypal-box{
+  margin-top:25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+@media(max-width:1100px){
+
+  .content{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:992px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bank-grid{
+    grid-template-columns:1fr;
+  }
+
+  .accounts{
+    grid-template-columns:1fr;
+  }
+
+  .proof-box{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .hero h1{
+    font-size:2.7rem;
+  }
+
+  .double-input{
+    grid-template-columns:1fr;
+  }
+
+  .paypal-box{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+}

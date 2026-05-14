@@ -1,0 +1,45 @@
+﻿<!doctype html>
+<html lang="es" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ubicación - Casa del Alfarero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ubi.css">
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+ </head>
+ <body class="h-full font-body overflow-auto bg-[#f8f6f1]">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+     <div class="nav-icon">
+      <svg width="20" height="20" viewbox="0 0 24 24" fill="none" stroke="#d4af69" stroke-width="1.5">
+       <path d="M12 2C8 2 5 5 5 9c0 3 1 5 2 7 1 2 2 4 2 6h6c0-2 1-4 2-6 1-2 2-4 2-7 0-4-3-7-7-7z" />
+       <path d="M9 22h6" stroke-linecap="round" />
+       <path d="M10 2c0 0-1 3 0 5" opacity="0.5" />
+      </svg>
+     </div><span class="font-heading text-lg font-bold">Casa del Alfarero</span>
+    </div>
+    <div class="flex items-center gap-6">
+     <a href="index.html" class="text-sm tracking-wide hover:text-yellow-400 transition-colors">Inicio</a>
+     <a href="index.html#contacto" class="text-sm tracking-wide hover:text-yellow-400 transition-colors">Contacto</a>
+    </div>
+   </div>
+  </nav>
+  <main class="min-h-screen pt-28 pb-16 px-6">
+   <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-10">
+     <p class="text-sm uppercase tracking-widest mb-3 about-gold-text">Ubicación</p>
+     <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4 about-dark-text">Encuéntranos en el mapa</h1>
+     <p class="text-sm contact-gray max-w-2xl mx-auto">Nuestra iglesia está ubicada en Del tanque de la policia 1c.s. Usa el mapa para acercar, girar y explorar en 3D en Google Maps.</p>
+    </div>
+    <div class="shadow-map rounded-3xl overflow-hidden mb-6 border border-[#d4af69]">
+     <iframe class="w-full h-[520px]" src="https://www.google.com/maps?q=12.260787434123332,-86.56977698514191&t=k&z=18&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="text-center">
+     <a href="https://www.google.com/maps?q=12.260787434123332,-86.56977698514191&t=k&z=18" target="_blank" rel="noreferrer" class="inline-block px-6 py-3 rounded-full bg-[#d4af69] text-[#1a1a2e] font-semibold transition hover:bg-[#b89552]">Abrir en Google Maps 3D</a>
+    </div>
+   </div>
+  </main>
+ </body>
+</html>
