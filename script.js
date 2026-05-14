@@ -8,14 +8,51 @@ const config = {
   address_text: 'Del tanque de la policia 1c.s,'
 };
 
+// Función para actualizar idioma
+function updateLanguage() {
+  const lang = localStorage.getItem('language') || 'es';
+  document.documentElement.lang = lang;
+  
+  // Actualizar elemento de idioma actual
+  const languageMap = { es: 'ES', en: 'EN', fr: 'FR', pt: 'PT' };
+  document.getElementById('current-language').textContent = languageMap[lang] || 'ES';
+  
+  // Actualizar todos los elementos con data-translate
+  document.querySelectorAll('[data-translate]').forEach(element => {
+    const key = element.getAttribute('data-translate');
+    const translation = getTranslation(key, lang);
+    element.textContent = translation;
+  });
+}
+
+// Menú hamburguesa
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const closeIcon = document.getElementById('close-icon');
+
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+  });
+  
+  // Cerrar menú al hacer click en un enlace
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    });
+  });
+}
+
+// Actualizar idioma al cargar
+document.addEventListener('DOMContentLoaded', updateLanguage);
+
 // Actualizar textos
 document.getElementById('nav-name').textContent = config.church_name;
-document.getElementById('hero-title').textContent = config.church_name;
-document.getElementById('hero-subtitle').textContent = config.welcome_text;
-document.getElementById('service-sunday').textContent = config.service_sunday;
-document.getElementById('service-wednesday').textContent = config.service_wednesday;
-document.getElementById('pastor-name').textContent = config.pastor_name;
-document.getElementById('address-text').textContent = config.address_text;
 
 const sectionLogoBackgrounds = document.querySelectorAll('.section-logo-bg');
 

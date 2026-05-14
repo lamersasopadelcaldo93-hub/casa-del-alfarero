@@ -498,3 +498,73 @@ footer {
 .social-youtube .social-icon {
   color: #ffffff;
 }
+
+/* Estilos para el menú hamburguesa y selector de idiomas */
+#hamburger-btn {
+  color: #ffffff;
+  display: flex;
+}
+
+#hamburger-icon,
+#close-icon {
+  transition: all 0.3s ease;
+}
+
+#mobile-menu {
+  transition: all 0.3s ease;
+  max-height: 500px;
+}
+
+#mobile-menu.hidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+#language-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #d4af69 !important;
+  color: #1a1a2e !important;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#language-btn:hover {
+  background-color: #f0d890 !important;
+  transform: scale(1.05);
+}
+
+#language-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+}
+
+.group:hover .hidden {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  #mobile-menu {
+    border-top: 1px solid rgba(212,175,105,0.2);
+  }
+  
+  #mobile-menu a {
+    display: block;
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+    color: #c9c3b8;
+  }
+  
+  #mobile-menu a:hover {
+    color: #d4af69;
+  }
+}
+
