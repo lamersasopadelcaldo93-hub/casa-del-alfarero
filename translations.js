@@ -21,6 +21,7 @@ const translations = {
     // Sección About
     about_title: 'Nuestra Historia',
     about_heading: 'Quiénes Somos',
+    pastor_name: 'Pedro Gutierrez Guadamuz',
     pastor_quote: '"Creemos en el poder transformador de Dios. Así como el alfarero moldea el barro, Dios nos moldea con amor y propósito para cumplir Su voluntad en nuestras vidas."',
     about_text: 'Somos una comunidad de fe comprometida con el amor de Cristo. Nuestras puertas están abiertas para todos aquellos que buscan un encuentro genuino con Dios.',
     stat_1: '30+',
@@ -107,6 +108,7 @@ const translations = {
     // About Section
     about_title: 'Our Story',
     about_heading: 'Who We Are',
+    pastor_name: 'Pedro Gutierrez Guadamuz',
     pastor_quote: '"We believe in the transforming power of God. Just as the potter shapes the clay, God shapes us with love and purpose to fulfill His will in our lives."',
     about_text: 'We are a community of faith committed to the love of Christ. Our doors are open to all those seeking a genuine encounter with God.',
     stat_1: '30+',
@@ -193,6 +195,7 @@ const translations = {
     // About Section
     about_title: 'Notre Histoire',
     about_heading: 'Qui Sommes-nous',
+    pastor_name: 'Pedro Gutierrez Guadamuz',
     pastor_quote: '"Nous croyons au pouvoir transformateur de Dieu. Tout comme le potier façonne l\'argile, Dieu nous façonne avec amour et un objectif pour accomplir Sa volonté dans nos vies."',
     about_text: 'Nous sommes une communauté de foi engagée envers l\'amour du Christ. Nos portes sont ouvertes à tous ceux qui recherchent une véritable rencontre avec Dieu.',
     stat_1: '30+',
@@ -279,6 +282,7 @@ const translations = {
     // About Section
     about_title: 'Nossa História',
     about_heading: 'Quem Somos',
+    pastor_name: 'Pedro Gutierrez Guadamuz',
     pastor_quote: '"Acreditamos no poder transformador de Deus. Assim como o oleiro molda o barro, Deus nos molda com amor e propósito para cumprir Sua vontade em nossas vidas."',
     about_text: 'Somos uma comunidade de fé comprometida com o amor de Cristo. Nossas portas estão abertas para todos que buscam um encontro genuíno com Deus.',
     stat_1: '30+',
