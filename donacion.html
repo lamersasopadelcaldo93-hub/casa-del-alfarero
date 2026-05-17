@@ -91,56 +91,7 @@
 
 <section class="content container">
 
-  <div class="form-card">
-
-    <div class="section-header">
-      <span>1</span>
-      <h2>Completa tus datos</h2>
-    </div>
-
-    <div class="input-group">
-      <label>Nombre completo</label>
-      <input type="text" placeholder="Ej: Juan Pérez">
-    </div>
-
-    <div class="input-group">
-      <label>Correo electrónico</label>
-      <input type="email" placeholder="correo@ejemplo.com">
-    </div>
-
-    <div class="input-group">
-      <label>Motivo o mensaje</label>
-      <textarea placeholder="Escribe tu mensaje, petición o dedicatoria..."></textarea>
-    </div>
-
-    <div class="double-input">
-
-      <div class="input-group">
-        <label>Monto</label>
-        <input type="number" placeholder="500">
-      </div>
-
-      <div class="input-group">
-        <label>Moneda</label>
-
-        <select>
-          <option>NIO</option>
-          <option>USD</option>
-        </select>
-      </div>
-
-    </div>
-
-    <div class="secure-box">
-      <i class="fa-solid fa-lock"></i>
-      Tu información está protegida.
-    </div>
-
-  </div>
-
-  <div class="payment-column">
-
-    <div class="payment-card">
+  <div class="payment-card">
 
       <div class="section-header">
         <span>2</span>
@@ -152,21 +103,25 @@
         <div class="bank-card">
 
           <div class="bank-title banpro">
-            BANPRO
+            <img src="imagenes/logos/descarga.png" alt="Logo BANPRO" class="bank-logo" />
           </div>
 
           <div class="accounts">
 
             <div class="account">
               <h4>CÓRDOBAS (NIO)</h4>
-              <p><strong>Cuenta:</strong> 1002 3456 7890</p>
-              <p><strong>Nombre:</strong> Ministerio Luz y Verdad</p>
+              <div class="account-details">
+                <p><strong>Cuenta:</strong> 1002 3456 7890</p>
+                <p><strong>Nombre:</strong> Iglesia casa del alfarero</p>
+              </div>
             </div>
 
             <div class="account">
               <h4>DÓLARES (USD)</h4>
-              <p><strong>Cuenta:</strong> 1002 9876 5432</p>
-              <p><strong>Nombre:</strong> Ministerio Luz y Verdad</p>
+              <div class="account-details">
+                <p><strong>Cuenta:</strong> 1002 9876 5432</p>
+                <p><strong>Nombre:</strong> Iglesia casa del alfarero</p>
+              </div>
             </div>
 
           </div>
@@ -176,23 +131,26 @@
         <div class="bank-card">
 
           <div class="bank-title lafise">
-            LAFISE
+            <img src="imagenes/logos/descarga (1).png" alt="Logo LAFISE" class="bank-logo" />
           </div>
 
           <div class="accounts">
 
             <div class="account">
               <h4>CÓRDOBAS (NIO)</h4>
-              <p><strong>Cuenta:</strong> 1230 4567 8910</p>
-              <p><strong>Nombre:</strong> Ministerio Luz y Verdad</p>
+              <div class="account-details">
+                <p><strong>Cuenta:</strong> 1230 4567 8910</p>
+                <p><strong>Nombre:</strong> Iglesia casa del alfarero</p>
+              </div>
             </div>
 
             <div class="account">
               <h4>DÓLARES (USD)</h4>
-              <p><strong>Cuenta:</strong> 1230 0987 6543</p>
-              <p><strong>Nombre:</strong> Ministerio Luz y Verdad</p>
+              <div class="account-details">
+                <p><strong>Cuenta:</strong> 1230 0987 6543</p>
+                <p><strong>Nombre:</strong> Iglesia casa del alfarero</p>
+              </div>
             </div>
-
           </div>
 
         </div>
@@ -225,12 +183,98 @@
 
     </div>
 
-  </div>
+    <div class="form-card">
+
+      <div class="section-header">
+        <span>1</span>
+        <h2>Completa tus datos</h2>
+      </div>
+
+      <p class="form-note">Envía tu mensaje directamente al correo de la iglesia. Ingresa tu nombre y tu correo para que podamos contactarte.</p>
+
+      <form id="contact-form" action="https://formsubmit.co/leonardoyassercontrerasroa@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Mensaje desde formulario de donaciones">
+        <input type="hidden" name="_captcha" value="false">
+
+        <div class="input-group">
+          <label for="donor-name">Nombre completo</label>
+          <input id="donor-name" name="name" type="text" placeholder="Ej: Juan Pérez" required>
+        </div>
+
+        <div class="input-group">
+          <label for="donor-email">Correo electrónico</label>
+          <input id="donor-email" name="email" type="email" placeholder="correo@ejemplo.com" required>
+        </div>
+
+        <div class="input-group full-width">
+          <label for="donor-message">Motivo o mensaje</label>
+          <textarea id="donor-message" name="message" placeholder="Escribe tu mensaje, petición o dedicatoria..." required></textarea>
+        </div>
+
+        <button type="submit" class="send-button">Enviar información</button>
+      </form>
+
+      <div class="secure-box full-width">
+        <i class="fa-solid fa-lock"></i>
+        Tu información está protegida.
+      </div>
+
+    </div>
 
 </section>
 
 <script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const statusMessage = document.createElement('p');
+    statusMessage.className = 'form-status';
+    form.parentNode.insertBefore(statusMessage, form.nextSibling);
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('donor-name').value.trim();
+      const email = document.getElementById('donor-email').value.trim();
+      const message = document.getElementById('donor-message').value.trim();
+
+      if (!name || !email || !message) {
+        statusMessage.textContent = 'Por favor completa todos los campos antes de enviar.';
+        statusMessage.style.color = '#b91c1c';
+        return;
+      }
+
+      const formData = new FormData(form);
+      formData.set('_subject', 'Mensaje desde formulario de donaciones');
+      formData.set('_captcha', 'false');
+
+      fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          statusMessage.textContent = 'Gracias, tu mensaje fue enviado correctamente.';
+          statusMessage.style.color = '#166534';
+          form.reset();
+        } else {
+          statusMessage.textContent = 'No se pudo enviar el mensaje. Intenta de nuevo más tarde.';
+          statusMessage.style.color = '#b91c1c';
+        }
+      })
+      .catch(() => {
+        statusMessage.textContent = 'Ocurrió un error al enviar el mensaje. Intenta de nuevo.';
+        statusMessage.style.color = '#b91c1c';
+      });
+    });
+  });
+</script>
 </body>
 </html>
 ```
+
 
