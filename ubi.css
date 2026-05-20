@@ -243,6 +243,48 @@ body {
   color: #666;
 }
 
+:root {
+  --accent-celeste: #5ed3f3;
+}
+
+/* Hover global de texto e iconos */
+a:hover,
+button:hover,
+.nav-links:hover,
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover,
+p:hover,
+span:hover,
+label:hover,
+strong:hover,
+em:hover,
+.logo-img:hover,
+.nav-icon:hover,
+.hero-button:hover {
+  color: var(--accent-celeste) !important;
+}
+
+/* Hover para tarjetas y bloques */
+.card-hover:hover,
+.service-card-bg:hover,
+.contact-card-bg:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.15);
+}
+
+.card-hover:hover h3,
+.card-hover:hover p,
+.service-card-bg:hover h3,
+.contact-card-bg:hover h3,
+.service-card-bg:hover p,
+.contact-card-bg:hover p {
+  color: var(--accent-celeste);
+}
+
 footer {
   background: #1a1a2e;
 }

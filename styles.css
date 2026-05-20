@@ -193,6 +193,51 @@ body {
   color: #e8e4dc;
 }
 
+#navbar .nav-links a {
+  color: #e8e4dc;
+  transition: color 0.25s ease;
+}
+
+#navbar .nav-links a:nth-child(1):hover {
+  color: #7dd3fc !important;
+}
+
+#navbar .nav-links a:nth-child(2):hover {
+  color: #38bdf8 !important;
+}
+
+#navbar .nav-links a:nth-child(3):hover {
+  color: #22d3ee !important;
+}
+
+#navbar .nav-links a:nth-child(4):hover {
+  color: #38bdf8 !important;
+}
+
+#navbar .nav-links a:nth-child(5):hover {
+  color: #5ed3f3 !important;
+}
+
+#navbar .nav-links a:nth-child(6):hover {
+  color: #0ea5e9 !important;
+}
+
+#navbar .nav-links a:nth-child(7):hover {
+  color: #38bdf8 !important;
+}
+
+#navbar .nav-links a:nth-child(8):hover {
+  color: #60a5fa !important;
+}
+
+#navbar .nav-links a:nth-child(9):hover {
+  color: #7dd3fc !important;
+}
+
+#navbar .nav-links a:nth-child(10):hover {
+  color: #5ed3f3 !important;
+}
+
 #inicio {
   min-height: 760px;
   padding-top: 100px;
@@ -413,6 +458,56 @@ body {
   text-decoration: none;
 }
 
+:root {
+  --accent-celeste: #5ed3f3;
+}
+
+/* Hover global de texto e iconos */
+a:hover,
+button:hover,
+.nav-links:hover,
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover,
+p:hover,
+span:hover,
+label:hover,
+strong:hover,
+em:hover,
+.logo-img:hover,
+.nav-icon:hover,
+.hero-button:hover {
+  color: var(--accent-celeste) !important;
+}
+
+/* Hover para tarjetas y bloques */
+.folder-card:hover,
+.video-card:hover,
+.service-card-bg:hover,
+.contact-card-bg:hover,
+.card-hover:hover,
+.folder-card-button:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 50px rgba(0, 0, 0, 0.15);
+}
+
+.folder-card:hover h3,
+.folder-card:hover p,
+.service-card-bg:hover h3,
+.contact-card-bg:hover h3,
+.service-card-bg:hover p,
+.contact-card-bg:hover p {
+  color: var(--accent-celeste);
+}
+
+.video-card:hover .video-card-body h3,
+.video-card:hover .video-card-body p {
+  color: var(--accent-celeste);
+}
+
 #servicios {
   background: #1a1a2e;
 }
@@ -613,10 +708,47 @@ footer {
     padding: 0.75rem 0;
     font-size: 0.95rem;
     color: #c9c3b8;
+    transition: color 0.25s ease;
   }
   
-  #mobile-menu a:hover {
-    color: #d4af69;
+  #mobile-menu a:nth-child(1):hover {
+    color: #7dd3fc;
+  }
+  
+  #mobile-menu a:nth-child(2):hover {
+    color: #38bdf8;
+  }
+  
+  #mobile-menu a:nth-child(3):hover {
+    color: #22d3ee;
+  }
+  
+  #mobile-menu a:nth-child(4):hover {
+    color: #38bdf8;
+  }
+  
+  #mobile-menu a:nth-child(5):hover {
+    color: #5ed3f3;
+  }
+  
+  #mobile-menu a:nth-child(6):hover {
+    color: #0ea5e9;
+  }
+  
+  #mobile-menu a:nth-child(7):hover {
+    color: #38bdf8;
+  }
+  
+  #mobile-menu a:nth-child(8):hover {
+    color: #60a5fa;
+  }
+  
+  #mobile-menu a:nth-child(9):hover {
+    color: #7dd3fc;
+  }
+  
+  #mobile-menu a:nth-child(10):hover {
+    color: #5ed3f3;
   }
 }
 

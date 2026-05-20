@@ -1,10 +1,12 @@
 const path = require('path');
 const dotenv = require('dotenv');
 
-// Cargar .env y luego cargar .env.example como fallback (no hace override de variables ya definidas)
-const primary = dotenv.config();
-const example = dotenv.config({ path: path.join(__dirname, '.env.example') });
-console.log('dotenv primary parsed:', !!primary.parsed, 'example parsed:', !!example.parsed);
+const envResult = dotenv.config();
+if (envResult.error) {
+  console.warn('No .env file loaded; using host environment variables if available.');
+} else {
+  console.log('Loaded .env file.');
+}
 
 const express = require('express');
 const nodemailer = require('nodemailer');
@@ -13,6 +15,16 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Credentials', 'true');
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+  next();
+});
 app.use('/', express.static(path.join(__dirname)));
 
 app.post('/api/send-donation', async (req, res) => {
@@ -21,8 +33,17 @@ app.post('/api/send-donation', async (req, res) => {
     return res.status(400).json({ success: false, error: 'Faltan datos requeridos.' });
   }
 
+  const requiredEnv = ['SMTP_HOST', 'SMTP_PORT', 'SMTP_USER', 'SMTP_PASS', 'RECIPIENT_EMAIL', 'FROM_EMAIL'];
+  const missingEnv = requiredEnv.filter((key) => !process.env[key]);
+  if (missingEnv.length > 0) {
+    console.error('Missing required environment variables:', missingEnv);
+    return res.status(500).json({
+      success: false,
+      error: `Faltan variables de configuración: ${missingEnv.join(', ')}`
+    });
+  }
+
   try {
-    // Log SMTP env for debugging
     console.log('SMTP config:', {
       host: process.env.SMTP_HOST,
       port: process.env.SMTP_PORT,
@@ -31,7 +52,6 @@ app.post('/api/send-donation', async (req, res) => {
     });
 
     const smtpPort = process.env.SMTP_PORT ? parseInt(process.env.SMTP_PORT, 10) : 587;
-    // Forzar secure=true únicamente para el puerto 465 (SMTPS). Para 587 usamos STARTTLS (secure=false).
     const secureFlag = smtpPort === 465;
 
     const transporter = nodemailer.createTransport({
@@ -45,7 +65,7 @@ app.post('/api/send-donation', async (req, res) => {
     });
 
     const mailOptions = {
-      from: process.env.FROM_EMAIL || process.env.SMTP_USER,
+      from: process.env.FROM_EMAIL,
       to: process.env.RECIPIENT_EMAIL,
       subject: `Formulario de donaciones: ${name}`,
       text: `Nuevo mensaje desde formulario de donaciones:\n\nNombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`

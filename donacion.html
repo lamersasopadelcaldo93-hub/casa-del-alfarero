@@ -230,9 +230,13 @@
         }
 
         const payload = { name, email, message };
-        const apiEndpoint = (['localhost', '127.0.0.1'].includes(window.location.hostname) && window.location.port !== '3000')
+        const isLocalhost = ['localhost', '127.0.0.1'].includes(window.location.hostname);
+        const isFileUrl = window.location.protocol === 'file:';
+        const apiEndpoint = isLocalhost
           ? `${window.location.protocol}//${window.location.hostname}:3000/api/send-donation`
-          : new URL('/api/send-donation', window.location.origin).href;
+          : isFileUrl
+            ? 'https://casa-del-alfarero.onrender.com/api/send-donation'
+            : '/api/send-donation';
         console.log('Sending donation to endpoint:', apiEndpoint);
 
         try {

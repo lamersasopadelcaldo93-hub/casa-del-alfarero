@@ -26,6 +26,8 @@ Sitio web de donaciones y presentación de la iglesia Casa del Alfarero.
    - `RECIPIENT_EMAIL`
    - `FROM_EMAIL`
 
+> En producción (por ejemplo en Render), configura estas variables directamente en el panel del servicio y no dependas de `.env.example`.
+
 5. Inicia el servidor:
    ```bash
    npm start

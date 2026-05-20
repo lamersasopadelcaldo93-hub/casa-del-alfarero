@@ -102,6 +102,87 @@ body{
 .hero-item i{
   color:#f4c85f;
   font-size:1.5rem;
+  transition: color 0.25s ease;
+}
+
+:root {
+  --accent-celeste: #5ed3f3;
+}
+
+/* Hover global para texto */
+body, .container, .hero, .content, .form-card, .payment-card, .bank-card {
+  transition: color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+h1:hover,
+h2:hover,
+h3:hover,
+h4:hover,
+h5:hover,
+h6:hover,
+p:hover,
+span:hover,
+label:hover,
+button:hover,
+strong:hover,
+em:hover,
+a:hover,
+input:hover,
+textarea:hover {
+  color: var(--accent-celeste) !important;
+}
+
+/* Hover para cuadros/tarjetas */
+.bank-card:hover,
+.hero-item:hover,
+.section-header:hover,
+.account:hover,
+.form-card:hover,
+.payment-card:hover,
+.verse-box:hover {
+  color: var(--accent-celeste);
+}
+
+.bank-card:hover .bank-title,
+.bank-card:hover .account h4,
+.bank-card:hover .account-details p,
+.bank-card:hover .section-header span,
+.bank-card:hover .section-header h2,
+.bank-card:hover .top-label {
+  color: var(--accent-celeste);
+}
+
+.bank-card:hover .bank-logo,
+.hero-item:hover i,
+.bank-card:hover i,
+.section-header:hover i {
+  filter: grayscale(100%) brightness(1.15) sepia(15%) saturate(400%) hue-rotate(165deg);
+}
+
+.bank-card:hover .bank-title,
+.bank-card:hover .bank-logo {
+  color: var(--accent-celeste);
+}
+
+.bank-card:hover,
+.hero-item:hover,
+.section-header:hover,
+.account:hover,
+.form-card:hover,
+.payment-card:hover,
+.verse-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.bank-card,
+.hero-item,
+.section-header,
+.account,
+.form-card,
+.payment-card,
+.verse-box {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, color 0.25s ease;
 }
 
 .content{
@@ -321,12 +402,36 @@ textarea{
     grid-template-columns:1fr;
   }
 
+  .bank-card{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .bank-title{
+    width:100%;
+    padding:25px 20px 15px;
+  }
+
+  .bank-logo{
+    max-height:70px;
+  }
+
   .accounts{
+    padding:0 20px 20px;
     grid-template-columns:1fr;
   }
 
   .proof-box{
     grid-template-columns:1fr;
+  }
+
+  .form-card{
+    grid-template-columns:1fr;
+  }
+
+  .section-header{
+    flex-direction:column;
+    align-items:flex-start;
   }
 
 }
