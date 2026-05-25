@@ -506,25 +506,36 @@ body {
   --accent-celeste: #5ed3f3;
 }
 
-/* Hover global de texto e iconos */
-a:hover,
-button:hover,
-.nav-links:hover,
-h1:hover,
-h2:hover,
-h3:hover,
-h4:hover,
-h5:hover,
-h6:hover,
-p:hover,
-span:hover,
-label:hover,
-strong:hover,
-em:hover,
-.logo-img:hover,
-.nav-icon:hover,
-.hero-button:hover {
-  color: var(--accent-celeste) !important;
+/* Estilos para fondo cristalizado */
+.crystal-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.crystal-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('imagenes/fondo-contacto.jpg') center/cover no-repeat;
+  filter: blur(20px) brightness(0.7);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.crystal-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  z-index: -1;
+}
+
+/* Estilos adicionales para hacer que el contenido destaque sobre el fondo */
+.contact-section-content {
+  position: relative;
+  z-index: 1;
 }
 
 /* Hover para tarjetas y bloques */
