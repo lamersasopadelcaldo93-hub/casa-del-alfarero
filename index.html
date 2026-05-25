@@ -52,24 +52,25 @@
     </button>
    </div>
    <!-- Menú móvil -->
-   <div id="mobile-menu" class="hidden md:hidden bg-gray-900 border-t border-gray-700">
-     <div class="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-3">
-       <a href="#inicio" data-translate="nav_home" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Inicio</a>
-       <a href="#nosotros" data-translate="nav_about" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Nosotros</a>
-       <a href="#servicios" data-translate="nav_services" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Servicios</a>
-       <a href="#ministerios" data-translate="nav_activities" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Actividades</a>
-       <a href="#videos" data-translate="nav_videos" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Videos</a>
-        <a href="predicas.html" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Predicas</a>
-        <a href="proyectos.html" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Proyectos</a>
-        <a href="#contacto" data-translate="nav_contact" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Contacto</a>
-        <a href="ubicacio.html" data-translate="nav_location" class="py-2 text-gray-300 hover:text-yellow-400 transition-colors">Ubicación</a>
-       <div class="border-t border-gray-700 pt-3 mt-3">
-         <p class="text-sm text-gray-400 mb-2">Idioma:</p>
-         <div class="flex flex-wrap gap-2">
-           <button onclick="changeLanguage('es')" class="px-3 py-1 text-sm rounded bg-yellow-600 hover:bg-yellow-500 transition-colors">Español</button>
-           <button onclick="changeLanguage('en')" class="px-3 py-1 text-sm rounded bg-gray-700 hover:bg-gray-600 transition-colors">English</button>
-           <button onclick="changeLanguage('fr')" class="px-3 py-1 text-sm rounded bg-gray-700 hover:bg-gray-600 transition-colors">Français</button>
-           <button onclick="changeLanguage('pt')" class="px-3 py-1 text-sm rounded bg-gray-700 hover:bg-gray-600 transition-colors">Português</button>
+   <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-start justify-center p-8 pt-28">
+     <div class="w-fit min-w-[280px] max-h-[70vh] overflow-y-auto px-10 bg-white/10 backdrop-blur-3xl rounded-[3rem] shadow-2xl p-10 flex flex-col items-center gap-3 text-center border border-white/20">
+       <a href="#inicio" data-translate="nav_home" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Inicio</a>
+       <a href="#nosotros" data-translate="nav_about" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Nosotros</a>
+       <a href="#servicios" data-translate="nav_services" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Servicios</a>
+       <a href="#ministerios" data-translate="nav_activities" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Actividades</a>
+       <a href="#videos" data-translate="nav_videos" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Videos</a>
+       <a href="predicas.html" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Predicas</a>
+       <a href="proyectos.html" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Proyectos</a>
+       <a href="#contacto" data-translate="nav_contact" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Contacto</a>
+       <a href="ubicacio.html" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Ubicación</a>
+       <a href="donacion.html" data-translate="nav_donations" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Donaciones</a>
+       <div class="w-full border-t border-white/10 pt-6 mt-4">
+         <p class="text-xs font-black text-white/50 mb-4 uppercase tracking-widest">Idioma</p>
+         <div class="flex flex-wrap justify-center gap-2">
+           <button onclick="changeLanguage('es')" class="px-4 py-2 text-sm font-black rounded-xl bg-yellow-600 text-white shadow-md hover:bg-yellow-500 transition-colors">ES</button>
+           <button onclick="changeLanguage('en')" class="px-4 py-2 text-sm font-black rounded-xl bg-white/10 text-white shadow-md hover:bg-white/20 transition-colors">EN</button>
+           <button onclick="changeLanguage('fr')" class="px-4 py-2 text-sm font-black rounded-xl bg-white/10 text-white shadow-md hover:bg-white/20 transition-colors">FR</button>
+           <button onclick="changeLanguage('pt')" class="px-4 py-2 text-sm font-black rounded-xl bg-white/10 text-white shadow-md hover:bg-white/20 transition-colors">PT</button>
          </div>
        </div>
      </div>
