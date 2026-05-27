@@ -20,7 +20,7 @@ const translations = {
     
     // Sección About
     about_title: 'Nuestra Historia',
-    about_heading: 'Quiénes Somos',
+    about_heading: 'Quiénes Somos en la Iglesia Casa del Alfarero',
     pastor_name: 'Pastor: Pedro Gutierrez Guadamuz',
     pastor_quote: '"Creemos en el poder transformador de Dios. Así como el alfarero moldea el barro, Dios nos moldea con amor y propósito para cumplir Su voluntad en nuestras vidas."',
     about_text: 'Somos una comunidad de fe comprometida con el amor de Cristo. Nuestras puertas están abiertas para todos aquellos que buscan un encuentro genuino con Dios.',
@@ -33,7 +33,7 @@ const translations = {
     
     // Sección Servicios
     services_title: 'Acompáñanos',
-    services_heading: 'Nuestros Servicios',
+    services_heading: 'Servicios de nuestra Iglesia Alfarero',
     service_1_title: 'Culto Dominical',
     service_1_time: 'Domingos 9:20 AM',
     service_1_desc: 'Adoración, predicación y comunión en la presencia de Dios.',
