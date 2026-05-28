@@ -10,6 +10,8 @@ const translations = {
     nav_contact: 'Contacto',
     nav_location: 'Ubicación',
     nav_donations: 'Donaciones',
+    nav_predicas: 'Predicas',
+    nav_proyectos: 'Proyectos',
     
     // Sección Hero
     church_name: 'Casa del Alfarero',
@@ -55,6 +57,12 @@ const translations = {
     activity_3_desc: 'Encuentros, crecimiento y fuerza juvenil.',
     activity_4_title: 'Proyecto',
     activity_4_desc: 'Nuevos pasos para servir y construir juntos.',
+    activity_5_title: 'Congreso Damas',
+    activity_5_desc: 'Inspiración y crecimiento espiritual para la mujer de hoy.',
+    activity_6_title: 'Congreso Matrimonios',
+    activity_6_desc: 'Fortaleciendo el vínculo familiar bajo la guía de Dios.',
+    activity_7_title: 'Campo',
+    activity_7_desc: 'Actividades al aire libre y comunión fraternal en la naturaleza.',
     
     // Sección Videos
     videos_title: 'Multimedia',
@@ -82,6 +90,40 @@ const translations = {
     contact_hours_title: 'Horario',
     contact_hours: 'Martes 6:20 PM, Jueves 6:20 PM, y Domingos 9:20 AM',
     
+    // Sección Donaciones Específica
+    donation_hero_label: 'TU APOYO HACE LA DIFERENCIA',
+    donation_hero_title: 'Dona y sé parte de esta misión',
+    donation_hero_subtitle: 'Con tu donación nos ayudas a seguir compartiendo el amor de Dios y llevando esperanza a más personas.',
+    donation_verse_text: '"Cada uno dé como propuso en su corazón; no con tristeza, ni por necesidad; porque Dios ama al dador alegre."',
+    donation_verse_ref: '2 Corintios 9:7',
+    donation_secure_title: '100% Seguro',
+    donation_secure_desc: 'Tus datos y donaciones están protegidos.',
+    donation_transp_title: 'Transparencia',
+    donation_transp_desc: 'Cada donación se utiliza para la obra de Dios.',
+    donation_gratitude_title: 'Agradecimiento',
+    donation_gratitude_desc: 'Oramos por cada donante.',
+    donation_methods_title: 'Elige tu forma de donar',
+    donation_bank_acc: 'Cuenta:',
+    donation_bank_name: 'Nombre:',
+    donation_email_btn: 'Correo',
+    donation_contact_note: 'Escríbenos por correo electrónico.',
+
+    // Proyectos y Predicas
+    proyectos_working: 'Estamos trabajando en esta área. Pronto añadiremos novedades y formas de participar. Gracias por tu interés.',
+    predicas_label: 'Predicas',
+    predicas_heading: 'Casa del Alfarero',
+    predica_1_title: 'Predica : para esto he venido',
+    predica_2_title: 'Predica: levanto mis manos',
+    predica_process: 'En proceso',
+    predica_pastor: 'Pastor : Pedro Gutierrez Guadamuz',
+    predica_btn: 'Ver en YouTube',
+
+    // Ubicación
+    location_label: 'Ubicación',
+    location_heading: 'Encuéntranos en el mapa',
+    location_text: 'Nuestra iglesia está ubicada en Del tanque de la policia 1c.s. Usa el mapa para acercar, girar y explorar en 3D en Google Maps.',
+    location_btn: 'Abrir en Google Maps 3D',
+
     // Footer
     footer_copyright: '© 2026 Casa del Alfarero. Todos los derechos reservados.',
     album_close: 'Cerrar',
@@ -97,9 +139,11 @@ const translations = {
     nav_contact: 'Contact',
     nav_location: 'Location',
     nav_donations: 'Donations',
+    nav_predicas: 'Sermons',
+    nav_proyectos: 'Projects',
     
     // Hero Section
-    church_name: 'House of the Potter',
+    church_name: 'Casa del Alfarero',
     hero_subtitle: 'A place where God transforms lives',
     hero_quote: 'Isaiah 64:8 — "You are the potter, we are the clay"',
     hero_button_1: 'Join Us',
@@ -107,7 +151,7 @@ const translations = {
     
     // About Section
     about_title: 'Our Story',
-    about_heading: 'Who We Are',
+    about_heading: 'Casa del Alfarero Church',
     pastor_name: 'Pastor: Pedro Gutierrez Guadamuz',
     pastor_quote: '"We believe in the transforming power of God. Just as the potter shapes the clay, God shapes us with love and purpose to fulfill His will in our lives."',
     about_text: 'We are a community of faith committed to the love of Christ. Our doors are open to all those seeking a genuine encounter with God.',
@@ -142,6 +186,12 @@ const translations = {
     activity_3_desc: 'Encounters, growth and youth strength.',
     activity_4_title: 'Project',
     activity_4_desc: 'New steps to serve and build together.',
+    activity_5_title: 'Ladies Congress',
+    activity_5_desc: 'Inspiration and spiritual growth for today\'s woman.',
+    activity_6_title: 'Marriage Congress',
+    activity_6_desc: 'Strengthening the family bond under God\'s guidance.',
+    activity_7_title: 'Outdoors',
+    activity_7_desc: 'Outdoor activities and fraternal fellowship in nature.',
     
     // Videos Section
     videos_title: 'Multimedia',
@@ -169,6 +219,40 @@ const translations = {
     contact_hours_title: 'Hours',
     contact_hours: 'Tuesday 6:20 PM, Thursday 6:20 PM, and Sunday 9:20 AM',
     
+    // Donation Section
+    donation_hero_label: 'YOUR SUPPORT MAKES A DIFFERENCE',
+    donation_hero_title: 'Donate and be part of this mission',
+    donation_hero_subtitle: 'With your donation you help us continue sharing God\'s love and bringing hope to more people.',
+    donation_verse_text: '"Each one must give as he has decided in his heart, not reluctantly or under compulsion, for God loves a cheerful giver."',
+    donation_verse_ref: '2 Corinthians 9:7',
+    donation_secure_title: '100% Secure',
+    donation_secure_desc: 'Your data and donations are protected.',
+    donation_transp_title: 'Transparency',
+    donation_transp_desc: 'Every donation is used for God\'s work.',
+    donation_gratitude_title: 'Gratitude',
+    donation_gratitude_desc: 'We pray for every donor.',
+    donation_methods_title: 'Choose your way to donate',
+    donation_bank_acc: 'Account:',
+    donation_bank_name: 'Name:',
+    donation_email_btn: 'Email',
+    donation_contact_note: 'Write to us by email.',
+
+    // Projects and Sermons
+    proyectos_working: 'We are working on this area. Soon we will add news and ways to participate. Thank you for your interest.',
+    predicas_label: 'Sermons',
+    predicas_heading: 'Casa del Alfarero',
+    predica_1_title: 'Sermon: For this I have come',
+    predica_2_title: 'Sermon: I lift my hands',
+    predica_process: 'In process',
+    predica_pastor: 'Pastor: Pedro Gutierrez Guadamuz',
+    predica_btn: 'Watch on YouTube',
+
+    // Location
+    location_label: 'Location',
+    location_heading: 'Find us on the map',
+    location_text: 'Our church is located at Del tanque de la policia 1c.s. Use the map to zoom, rotate and explore in 3D on Google Maps.',
+    location_btn: 'Open in Google Maps 3D',
+
     // Footer
     footer_copyright: '© 2026 House of the Potter. All rights reserved.',
     album_close: 'Close',
@@ -184,9 +268,11 @@ const translations = {
     nav_contact: 'Contact',
     nav_location: 'Localisation',
     nav_donations: 'Dons',
+    nav_predicas: 'Prédications',
+    nav_proyectos: 'Projets',
     
     // Hero Section
-    church_name: 'Maison du Potier',
+    church_name: 'Casa del Alfarero',
     hero_subtitle: 'Un lieu où Dieu transforme les vies',
     hero_quote: 'Ésaïe 64:8 — "Tu es le potier, nous sommes l\'argile"',
     hero_button_1: 'Rejoignez-nous',
@@ -194,13 +280,13 @@ const translations = {
     
     // About Section
     about_title: 'Notre Histoire',
-    about_heading: 'Qui Sommes-nous',
+    about_heading: 'Église Casa del Alfarero',
     pastor_name: 'Pastor: Pedro Gutierrez Guadamuz',
     pastor_quote: '"Nous croyons au pouvoir transformateur de Dieu. Tout comme le potier façonne l\'argile, Dieu nous façonne avec amour et un objectif pour accomplir Sa volonté dans nos vies."',
     about_text: 'Nous sommes une communauté de foi engagée envers l\'amour du Christ. Nos portes sont ouvertes à tous ceux qui recherchent une véritable rencontre avec Dieu.',
     stat_1: '30+',
     stat_1_label: 'Années au service',
-    stat_2: '300+',
+    stat_2: '100+',
     stat_2_label: 'Familles',
     stat_3: '5',
     stat_3_label: 'Ministères',
@@ -229,6 +315,12 @@ const translations = {
     activity_3_desc: 'Rencontres, croissance et force de la jeunesse.',
     activity_4_title: 'Projet',
     activity_4_desc: 'Nouvelles étapes pour servir et construire ensemble.',
+    activity_5_title: 'Congrès des Femmes',
+    activity_5_desc: 'Inspiration et croissance spirituelle pour la femme d\'aujourd\'hui.',
+    activity_6_title: 'Congrès des Mariages',
+    activity_6_desc: 'Renforcer le lien familial sous la direction de Dieu.',
+    activity_7_title: 'Plein Air',
+    activity_7_desc: 'Activités de plein air et communion fraternelle dans la nature.',
     
     // Videos Section
     videos_title: 'Multimédia',
@@ -255,9 +347,43 @@ const translations = {
     contact_phone: '+505 (23130919)',
     contact_hours_title: 'Horaires',
     contact_hours: 'Mardi 6:20 PM, Jeudi 6:20 PM, et Dimanche 9:20 AM',
+
+    // Donation Section
+    donation_hero_label: 'VOTRE SOUTIEN FAIT LA DIFFÉRENCE',
+    donation_hero_title: 'Donnez et faites partie de cette mission',
+    donation_hero_subtitle: 'Avec votre don, vous nous aidez à continuer à partager l\'amour de Dieu et à apporter de l\'espoir à plus de personnes.',
+    donation_verse_text: '"Que chacun donne comme il l\'a résolu en son cœur, sans tristesse ni contrainte; car Dieu aime celui qui donne avec joie."',
+    donation_verse_ref: '2 Corinthiens 9:7',
+    donation_secure_title: '100% Sécurisé',
+    donation_secure_desc: 'Vos données et vos dons sont protégés.',
+    donation_transp_title: 'Transparence',
+    donation_transp_desc: 'Chaque don est utilisé pour l\'œuvre de Dieu.',
+    donation_gratitude_title: 'Gratitude',
+    donation_gratitude_desc: 'Nous prions pour chaque donateur.',
+    donation_methods_title: 'Choisissez votre façon de donner',
+    donation_bank_acc: 'Compte:',
+    donation_bank_name: 'Nom:',
+    donation_email_btn: 'E-mail',
+    donation_contact_note: 'Écrivez-nous par e-mail.',
+
+    // Projects and Sermons
+    proyectos_working: 'Nous travaillons sur ce domaine. Bientôt, nous ajouterons des nouvelles et des moyens de participer. Merci de votre intérêt.',
+    predicas_label: 'Prédications',
+    predicas_heading: 'Casa del Alfarero',
+    predica_1_title: 'Prédication : C\'est pour cela que je suis venu',
+    predica_2_title: 'Prédication : Je lève mes mains',
+    predica_process: 'En cours',
+    predica_pastor: 'Pasteur : Pedro Gutierrez Guadamuz',
+    predica_btn: 'Voir sur YouTube',
+
+    // Location
+    location_label: 'Localisation',
+    location_heading: 'Trouvez-nous sur la carte',
+    location_text: 'Notre église est située à Del tanque de la policia 1c.s. Utilisez la carte pour zoomer, faire pivoter et explorer en 3D sur Google Maps.',
+    location_btn: 'Ouvrir dans Google Maps 3D',
     
     // Footer
-    footer_copyright: '© 2026 Maison du Potier. Tous droits réservés.',
+    footer_copyright: '© 2026 Casa del Alfarero. Tous droits réservés.',
     album_close: 'Fermer',
     album_select: 'Sélectionnez une image pour voir la collection complète.',
   },
@@ -271,9 +397,11 @@ const translations = {
     nav_contact: 'Contato',
     nav_location: 'Localização',
     nav_donations: 'Doações',
+    nav_predicas: 'Pregações',
+    nav_proyectos: 'Projetos',
     
     // Hero Section
-    church_name: 'Casa do Oleiro',
+    church_name: 'Casa del Alfarero',
     hero_subtitle: 'Um lugar onde Deus transforma vidas',
     hero_quote: 'Isaías 64:8 — "Tu és o oleiro, nós somos o barro"',
     hero_button_1: 'Junte-se a Nós',
@@ -281,13 +409,13 @@ const translations = {
     
     // About Section
     about_title: 'Nossa História',
-    about_heading: 'Quem Somos',
+    about_heading: 'Igreja Casa del Alfarero',
     pastor_name: 'Pastor: Pedro Gutierrez Guadamuz',
     pastor_quote: '"Acreditamos no poder transformador de Deus. Assim como o oleiro molda o barro, Deus nos molda com amor e propósito para cumprir Sua vontade em nossas vidas."',
     about_text: 'Somos uma comunidade de fé comprometida com o amor de Cristo. Nossas portas estão abertas para todos que buscam um encontro genuíno com Deus.',
     stat_1: '30+',
     stat_1_label: 'Anos servindo',
-    stat_2: '300+',
+    stat_2: '100+',
     stat_2_label: 'Famílias',
     stat_3: '5',
     stat_3_label: 'Ministérios',
@@ -316,6 +444,12 @@ const translations = {
     activity_3_desc: 'Encontros, crescimento e força da juventude.',
     activity_4_title: 'Projeto',
     activity_4_desc: 'Novos passos para servir e construir juntos.',
+    activity_5_title: 'Congresso de Mulheres',
+    activity_5_desc: 'Inspiração e crescimento espiritual para a mulher de hoje.',
+    activity_6_title: 'Congresso de Casais',
+    activity_6_desc: 'Fortalecendo o vínculo familiar sob a orientação de Deus.',
+    activity_7_title: 'Campo',
+    activity_7_desc: 'Atividades ao ar livre e comunhão fraternal na natureza.',
     
     // Videos Section
     videos_title: 'Multimídia',
@@ -342,9 +476,43 @@ const translations = {
     contact_phone: '+505 (23130919)',
     contact_hours_title: 'Horário',
     contact_hours: 'Terça 6:20 PM, Quinta 6:20 PM, e Domingo 9:20 AM',
+
+    // Donation Section
+    donation_hero_label: 'SEU APOIO FAZ A DIFERENÇA',
+    donation_hero_title: 'Doe e faça parte desta missão',
+    donation_hero_subtitle: 'Com a sua doação, você nos ajuda a continuar compartilhando o amor de Deus e levando esperança a mais pessoas.',
+    donation_verse_text: '"Cada um contribua conforme propôs no seu coração, não com tristeza ou por necessidade, pois Deus ama quem dá com alegria."',
+    donation_verse_ref: '2 Coríntios 9:7',
+    donation_secure_title: '100% Seguro',
+    donation_secure_desc: 'Seus dados e doações estão protegidos.',
+    donation_transp_title: 'Transparência',
+    donation_transp_desc: 'Cada doação é usada para a obra de Deus.',
+    donation_gratitude_title: 'Gratidão',
+    donation_gratitude_desc: 'Oramos por cada doador.',
+    donation_methods_title: 'Escolha sua forma de doar',
+    donation_bank_acc: 'Conta:',
+    donation_bank_name: 'Nome:',
+    donation_email_btn: 'E-mail',
+    donation_contact_note: 'Escreva para nós por e-mail.',
+
+    // Projects and Sermons
+    proyectos_working: 'Estamos trabalhando nesta área. Em breve adicionaremos novidades e formas de participar. Obrigado pelo seu interesse.',
+    predicas_label: 'Pregações',
+    predicas_heading: 'Casa del Alfarero',
+    predica_1_title: 'Pregação: Para isso eu vim',
+    predica_2_title: 'Pregação: Levanto minhas mãos',
+    predica_process: 'Em processamento',
+    predica_pastor: 'Pastor: Pedro Gutierrez Guadamuz',
+    predica_btn: 'Assistir no YouTube',
+
+    // Location
+    location_label: 'Localização',
+    location_heading: 'Encontre-nos no mapa',
+    location_text: 'Nossa igreja está localizada em Del tanque de la policia 1c.s. Use o mapa para ampliar, girar e explorar em 3D no Google Maps.',
+    location_btn: 'Abrir no Google Maps 3D',
     
     // Footer
-    footer_copyright: '© 2026 Casa do Oleiro. Todos os direitos reservados.',
+    footer_copyright: '© 2026 Casa del Alfarero. Todos os direitos reservados.',
     album_close: 'Fechar',
     album_select: 'Selecione uma imagem para ver a coleção completa.',
   }

@@ -75,7 +75,7 @@ function updateLanguage() {
   document.querySelectorAll('[data-translate]').forEach(element => {
     const key = element.getAttribute('data-translate');
     const translation = typeof getTranslation === 'function' ? getTranslation(key, lang) : '';
-    if (translation) element.textContent = translation;
+    if (translation) element.innerHTML = translation;
   });
 }
 
@@ -123,10 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-  // Actualizar textos
-  const navNameEl = document.getElementById('nav-name');
-  if (navNameEl) navNameEl.textContent = config.church_name;
 });
 
 const sectionLogoBackgrounds = document.querySelectorAll('.section-logo-bg');
