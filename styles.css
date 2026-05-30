@@ -343,25 +343,15 @@ body {
 }
 
 .folder-card {
-  background: #ffffff;
-  border: 1px solid rgba(26,26,46,0.08);
-  overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .folder-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.16);
-  border-color: rgba(212,175,105,0.6);
-}
-
-.folder-card-button {
-  all: unset;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  cursor: pointer;
-  vertical-align: top;
 }
 
 .folder-card-image {
@@ -409,15 +399,17 @@ body {
 
 .folder-card-content {
   padding: 1.5rem;
-  background: rgba(255,255,255,0.96);
+  background: rgba(26, 26, 46, 0.95);
 }
 
 .folder-card-content h3 {
   margin-bottom: 0.5rem;
+  color: #d4af69; /* Título en Dorado */
 }
 
 .folder-card-content p {
   margin: 0;
+  color: #c9c3b8; /* Descripción en Gris Claro */
 }
 
 .album-modal {

@@ -11,7 +11,8 @@ const config = {
 // Efecto hover táctil en móviles: resalta mientras deslizas el dedo
 const touchHoverSelectors = [
   'a', 'button', 'h1', 'h2', 'h3', 'h4', 'p', 'span', 'i', 'strong', 'em', 'label',
-  '.bank-card', '.hero-item', '.verse-box', '.contact-link', '.folder-card', '.payment-card'
+  '.bank-card', '.hero-item', '.verse-box', '.contact-link', '.folder-card', '.payment-card',
+  '[data-album]' // Add this to make folder cards work with touch hover
 ];
 
 let activeTouchHoveredElements = new Set();
@@ -271,18 +272,43 @@ const albumData = {
       // Pega aquí el resto de imágenes de la carpeta 'congreso matriminios'
     ]
   },
-  'campo': {
-    title: 'Campo',
-    description: 'Imágenes de nuestras salidas y actividades recreativas al aire libre.',
-    images: [
-      'imagenes/campo/WhatsApp Image 2026-05-24 at 4.11.17 PM (1).jpeg',
-      'imagenes/campo/WhatsApp Image 2026-05-24 at 4.11.17 PM (2).jpeg',
-      'imagenes/campo/WhatsApp Image 2026-05-24 at 4.11.17 PM.jpeg',
-      'imagenes/campo/WhatsApp Image 2026-05-24 at 4.11.18 PM.jpeg'
-      // Pega aquí el resto de imágenes de la carpeta 'campo'
-    ]
-  }
-};
+   'campo': {
+     title: 'Campo',
+     description: 'Imágenes de nuestras salidas y actividades recreativas al aire libre.',
+     images: [
+       'imagenes/campo/WhatsApp Image 2026-05-24 at 4.11.17 PM (1).jpeg',
+       'imagenes/campo/WhatsApp Image 2026-05-24 at 4.11.17 PM (2).jpeg',
+       'imagenes/campo/WhatsApp Image 2026-05-24 at 4.11.17 PM.jpeg',
+       'imagenes/campo/WhatsApp Image 2026-05-24 at 4.11.18 PM.jpeg'
+       // Pega aquí el resto de imágenes de la carpeta 'campo'
+     ]
+   },
+   'pastorpedro': {
+     title: 'Pastor Pedro',
+     description: 'Galería de fotos del Pastor Pedro Gutierrez Guadamuz.',
+     images: [
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.36 PM (2).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.36 PM (1).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.36 PM.jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.35 PM (3).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.35 PM (2).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.35 PM (1).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.35 PM.jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.34 PM (4).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.34 PM (3).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.34 PM (2).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.34 PM (1).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.34 PM.jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.33 PM (1).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.33 PM.jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.21 PM.jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.20 PM (1).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.20 PM.jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.19 PM (1).jpeg',
+       'imagenes/Pastor-pedro/WhatsApp Image 2026-05-29 at 9.58.19 PM.jpeg'
+     ]
+   }
+ };
 
 const albumModal = document.getElementById('albumModal');
 const albumModalTitle = document.getElementById('albumModalTitle');

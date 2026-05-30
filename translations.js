@@ -23,7 +23,9 @@ const translations = {
     // Sección About
     about_title: 'Nuestra Historia',
     about_heading: 'Iglesia Casa del Alfarero',
-    pastor_name: 'Pastor: Pedro Gutierrez Guadamuz',
+    pastor_name: 'Pedro Gutierrez Guadamuz',
+    pastor_status: 'Pastor Activo',
+    pastor_active_since: 'Liderando desde 2010 — 2026 Presente',
     pastor_quote: '"Creemos en el poder transformador de Dios. Así como el alfarero moldea el barro, Dios nos moldea con amor y propósito para cumplir Su voluntad en nuestras vidas."',
     about_text: 'Somos una comunidad de fe comprometida con el amor de Cristo. Nuestras puertas están abiertas para todos aquellos que buscan un encuentro genuino con Dios.',
     stat_1: '30+',
@@ -86,7 +88,7 @@ const translations = {
     contact_address_title: 'Dirección',
     contact_address: 'Del tanque de la policía 1c.s,',
     contact_phone_title: 'Teléfono',
-    contact_phone: '+505 (23130919)',
+    contact_phone: '+505 8846-1828',
     contact_hours_title: 'Horario',
     contact_hours: 'Martes 6:20 PM, Jueves 6:20 PM, y Domingos 9:20 AM',
     
@@ -110,6 +112,8 @@ const translations = {
 
     // Proyectos y Predicas
     proyectos_working: 'Estamos trabajando en esta área. Pronto añadiremos novedades y formas de participar. Gracias por tu interés.',
+    project_future_title: 'Proyectos a Futuro',
+    project_future_desc: 'Nuevos pasos para construir y expandir la obra de Dios en nuestra comunidad.',
     predicas_label: 'Predicas',
     predicas_heading: 'Casa del Alfarero',
     predica_1_title: 'Predica : para esto he venido',
@@ -152,7 +156,9 @@ const translations = {
     // About Section
     about_title: 'Our Story',
     about_heading: 'Casa del Alfarero Church',
-    pastor_name: 'Pastor: Pedro Gutierrez Guadamuz',
+    pastor_name: 'Pedro Gutierrez Guadamuz',
+    pastor_status: 'Active Pastor',
+    pastor_active_since: 'Leading since 2010 — 2026 Present',
     pastor_quote: '"We believe in the transforming power of God. Just as the potter shapes the clay, God shapes us with love and purpose to fulfill His will in our lives."',
     about_text: 'We are a community of faith committed to the love of Christ. Our doors are open to all those seeking a genuine encounter with God.',
     stat_1: '30+',
@@ -215,7 +221,7 @@ const translations = {
     contact_address_title: 'Address',
     contact_address: 'From the police tank 1c.s,',
     contact_phone_title: 'Phone',
-    contact_phone: '+505 (23130919)',
+    contact_phone: '+505 8846-1828',
     contact_hours_title: 'Hours',
     contact_hours: 'Tuesday 6:20 PM, Thursday 6:20 PM, and Sunday 9:20 AM',
     
@@ -239,6 +245,8 @@ const translations = {
 
     // Projects and Sermons
     proyectos_working: 'We are working on this area. Soon we will add news and ways to participate. Thank you for your interest.',
+    project_future_title: 'Future Projects',
+    project_future_desc: 'New steps to build and expand God\'s work in our community.',
     predicas_label: 'Sermons',
     predicas_heading: 'Casa del Alfarero',
     predica_1_title: 'Sermon: For this I have come',
@@ -281,7 +289,9 @@ const translations = {
     // About Section
     about_title: 'Notre Histoire',
     about_heading: 'Église Casa del Alfarero',
-    pastor_name: 'Pastor: Pedro Gutierrez Guadamuz',
+    pastor_name: 'Pedro Gutierrez Guadamuz',
+    pastor_status: 'Pasteur Actif',
+    pastor_active_since: 'Dirige depuis 1994 — Présent',
     pastor_quote: '"Nous croyons au pouvoir transformateur de Dieu. Tout comme le potier façonne l\'argile, Dieu nous façonne avec amour et un objectif pour accomplir Sa volonté dans nos vies."',
     about_text: 'Nous sommes une communauté de foi engagée envers l\'amour du Christ. Nos portes sont ouvertes à tous ceux qui recherchent une véritable rencontre avec Dieu.',
     stat_1: '30+',
@@ -344,7 +354,7 @@ const translations = {
     contact_address_title: 'Adresse',
     contact_address: 'Du réservoir de police 1c.s,',
     contact_phone_title: 'Téléphone',
-    contact_phone: '+505 (23130919)',
+    contact_phone: '+505 8846-1828',
     contact_hours_title: 'Horaires',
     contact_hours: 'Mardi 6:20 PM, Jeudi 6:20 PM, et Dimanche 9:20 AM',
 
@@ -410,7 +420,9 @@ const translations = {
     // About Section
     about_title: 'Nossa História',
     about_heading: 'Igreja Casa del Alfarero',
-    pastor_name: 'Pastor: Pedro Gutierrez Guadamuz',
+    pastor_name: 'Pedro Gutierrez Guadamuz',
+    pastor_status: 'Pastor Ativo',
+    pastor_active_since: 'Liderando desde 2010 — 2026 Presente',
     pastor_quote: '"Acreditamos no poder transformador de Deus. Assim como o oleiro molda o barro, Deus nos molda com amor e propósito para cumprir Sua vontade em nossas vidas."',
     about_text: 'Somos uma comunidade de fé comprometida com o amor de Cristo. Nossas portas estão abertas para todos que buscam um encontro genuíno com Deus.',
     stat_1: '30+',
@@ -473,7 +485,7 @@ const translations = {
     contact_address_title: 'Endereço',
     contact_address: 'Do tanque da polícia 1c.s,',
     contact_phone_title: 'Telefone',
-    contact_phone: '+505 (23130919)',
+    contact_phone: '+505 8846-1828',
     contact_hours_title: 'Horário',
     contact_hours: 'Terça 6:20 PM, Quinta 6:20 PM, e Domingo 9:20 AM',
 
