@@ -344,14 +344,16 @@ body {
 
 .folder-card {
   position: relative;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95), rgba(22, 33, 62, 0.98));
+  backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .folder-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
 }
 
 .folder-card-image {
@@ -382,18 +384,6 @@ body {
   #ministerios .grid {
     grid-template-columns: repeat(2, minmax(240px, 1fr));
     gap: 1.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* En pantallas grandes forzar 4 columnas con min-width flexible y reducir padding para acercar a las orillas */
-  #ministerios .grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
-  }
-  #ministerios {
-    padding-left: 1rem;
-    padding-right: 1rem;
   }
 }
 
@@ -453,17 +443,8 @@ body {
 #videos {
   background: #1a1a2e;
 }
-
 .video-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-
-.video-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.22);
-  border-color: rgba(212,175,105,0.35);
+  backdrop-filter: blur(8px);
 }
 
 .video-card-frame {
@@ -606,7 +587,7 @@ body {
 }
 
 .contact-gray {
-  color: #666;
+  color: #333;
 }
 
 footer {
@@ -732,4 +713,87 @@ footer {
 
 .group:hover .hidden {
   display: block;
+}
+
+/* Efecto de resalte celeste para imágenes de actividades */
+.activity-img-container {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.folder-card:hover .activity-img-container,
+.folder-card.touch-hover .activity-img-container {
+  box-shadow: 0 0 50px rgba(94, 211, 243, 0.8), 0 0 20px rgba(94, 211, 243, 0.4) !important;
+  border-color: #5ed3f3 !important;
+  transform: scale(1.02);
+}
+
+/* Mostrar botón de álbum en móvil al tocar el contenedor */
+.folder-card.touch-hover button[data-album] {
+  opacity: 1 !important;
+}
+
+/* Carrusel Vertical Automático para Actividades */
+.activity-carousel {
+  height: 120px;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.activity-carousel-track {
+  display: flex;
+  flex-direction: column;
+  animation: activity-slide-up 10s infinite ease-in-out;
+}
+
+.activity-carousel-track img {
+  height: 120px;
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes activity-slide-up {
+  0%, 20% { transform: translateY(0); }
+  25%, 45% { transform: translateY(-120px); }
+  50%, 70% { transform: translateY(-240px); }
+  75%, 95% { transform: translateY(-360px); }
+  100% { transform: translateY(0); }
+}
+
+/* Animación Incandescente para el punto de YouTube */
+@keyframes incandescent-red {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px #ff0000, 0 0 15px #ff0000, 0 0 25px #ff0000;
+    transform: scale(1.4);
+  }
+  50% {
+    opacity: 0.15;
+    box-shadow: 0 0 0px transparent;
+    transform: scale(0.8);
+  }
+}
+
+.animate-incandescent-red {
+  animation: incandescent-red 1.2s infinite ease-in-out;
+}
+
+/* Animación Incandescente para el punto del Pastor */
+@keyframes incandescent-yellow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 10px #eab308, 0 0 20px #eab308;
+    transform: scale(1.3);
+  }
+  50% {
+    opacity: 0.5;
+    box-shadow: 0 0 2px transparent;
+    transform: scale(0.9);
+  }
+}
+
+.animate-incandescent-yellow {
+  animation: incandescent-yellow 1.8s infinite ease-in-out;
 }

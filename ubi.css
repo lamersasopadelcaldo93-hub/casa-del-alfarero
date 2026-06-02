@@ -1,4 +1,4 @@
-﻿﻿/* Estilos de ubicación con la misma paleta y propiedades de la página principal */
+﻿﻿﻿﻿/* Estilos de ubicación con la misma paleta y propiedades de la página principal */
 
 html, body {
   height: 100%;
@@ -240,7 +240,7 @@ body {
 }
 
 .contact-gray {
-  color: #666;
+  color: #333;
 }
 
 :root {

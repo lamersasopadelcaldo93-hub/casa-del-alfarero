@@ -57,7 +57,7 @@ const translations = {
     activity_2_desc: 'Alcanzando a nuestra comunidad con amor.',
     activity_3_title: 'Jóvenes',
     activity_3_desc: 'Encuentros, crecimiento y fuerza juvenil.',
-    activity_4_title: 'Proyecto',
+    activity_4_title: 'CDI - Ovejitas de Jesús',
     activity_4_desc: 'Nuevos pasos para servir y construir juntos.',
     activity_5_title: 'Congreso Damas',
     activity_5_desc: 'Inspiración y crecimiento espiritual para la mujer de hoy.',
@@ -127,6 +127,11 @@ const translations = {
     location_heading: 'Encuéntranos en el mapa',
     location_text: 'Nuestra iglesia está ubicada en Del tanque de la policia 1c.s. Usa el mapa para acercar, girar y explorar en 3D en Google Maps.',
     location_btn: 'Abrir en Google Maps 3D',
+    
+    bible_title: 'La Santa Biblia',
+    bible_desc: 'Lámpara es a mis pies tu palabra, y lumbrera a mi camino. — Salmos 119:105',
+    music_title: 'Música de Adoración',
+    music_desc: 'Cantad alegres a Dios, habitantes de toda la tierra. — Salmos 100:1',
 
     // Footer
     footer_copyright: '© 2026 Casa del Alfarero. Todos los derechos reservados.',
@@ -190,7 +195,7 @@ const translations = {
     activity_2_desc: 'Reaching our community with love.',
     activity_3_title: 'Youth',
     activity_3_desc: 'Encounters, growth and youth strength.',
-    activity_4_title: 'Project',
+    activity_4_title: 'CDI - Ovejitas de Jesús',
     activity_4_desc: 'New steps to serve and build together.',
     activity_5_title: 'Ladies Congress',
     activity_5_desc: 'Inspiration and spiritual growth for today\'s woman.',
@@ -261,6 +266,11 @@ const translations = {
     location_text: 'Our church is located at Del tanque de la policia 1c.s. Use the map to zoom, rotate and explore in 3D on Google Maps.',
     location_btn: 'Open in Google Maps 3D',
 
+    bible_title: 'The Holy Bible',
+    bible_desc: 'Your word is a lamp to my feet and a light to my path. — Psalms 119:105',
+    music_title: 'Worship Music',
+    music_desc: 'Make a joyful noise unto the Lord, all ye lands. — Psalms 100:1',
+
     // Footer
     footer_copyright: '© 2026 House of the Potter. All rights reserved.',
     album_close: 'Close',
@@ -323,7 +333,7 @@ const translations = {
     activity_2_desc: 'Atteindre notre communauté avec amour.',
     activity_3_title: 'Jeunesse',
     activity_3_desc: 'Rencontres, croissance et force de la jeunesse.',
-    activity_4_title: 'Projet',
+    activity_4_title: 'CDI - Ovejitas de Jesús',
     activity_4_desc: 'Nouvelles étapes pour servir et construire ensemble.',
     activity_5_title: 'Congrès des Femmes',
     activity_5_desc: 'Inspiration et croissance spirituelle pour la femme d\'aujourd\'hui.',
@@ -391,6 +401,11 @@ const translations = {
     location_heading: 'Trouvez-nous sur la carte',
     location_text: 'Notre église est située à Del tanque de la policia 1c.s. Utilisez la carte pour zoomer, faire pivoter et explorer en 3D sur Google Maps.',
     location_btn: 'Ouvrir dans Google Maps 3D',
+
+    bible_title: 'La Sainte Bible',
+    bible_desc: 'Ta parole est une lampe à mes pieds, et une lumière sur mon sentier. — Psaumes 119:105',
+    music_title: 'Musique d\'Adoration',
+    music_desc: 'Poussez vers l\'Éternel des cris de joie, vous tous, habitants de la terre! — Psaumes 100:1',
     
     // Footer
     footer_copyright: '© 2026 Casa del Alfarero. Tous droits réservés.',
@@ -454,7 +469,7 @@ const translations = {
     activity_2_desc: 'Alcançando nossa comunidade com amor.',
     activity_3_title: 'Juventude',
     activity_3_desc: 'Encontros, crescimento e força da juventude.',
-    activity_4_title: 'Projeto',
+    activity_4_title: 'CDI - Ovejitas de Jesús',
     activity_4_desc: 'Novos passos para servir e construir juntos.',
     activity_5_title: 'Congresso de Mulheres',
     activity_5_desc: 'Inspiração e crescimento espiritual para a mulher de hoje.',
@@ -522,6 +537,11 @@ const translations = {
     location_heading: 'Encontre-nos no mapa',
     location_text: 'Nossa igreja está localizada em Del tanque de la policia 1c.s. Use o mapa para ampliar, girar e explorar em 3D no Google Maps.',
     location_btn: 'Abrir no Google Maps 3D',
+
+    bible_title: 'A Bíblia Sagrada',
+    bible_desc: 'Lâmpada para os meus pés é tua palavra, e luz para o meu caminho. — Salmos 119:105',
+    music_title: 'Música de Adoração',
+    music_desc: 'Celebrai com júbilo ao Senhor, todos os moradores da terra. — Salmos 100:1',
     
     // Footer
     footer_copyright: '© 2026 Casa del Alfarero. Todos os direitos reservados.',

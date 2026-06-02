@@ -32,12 +32,32 @@
       <img src="imagenes/logo.png" class="logo-img" alt="Casa del Alfarero" />
       <span id="nav-name" data-translate="church_name" class="font-heading text-lg font-bold">Casa del Alfarero</span>
     </div>
-    <div class="hidden md:flex gap-8 items-center text-sm tracking-wide nav-links">
-      <a href="index.html" data-translate="nav_home" class="hover:text-yellow-400 transition-colors">Inicio</a>
-      <a href="predicas.html" data-translate="nav_predicas" class="hover:text-yellow-400 transition-colors">Predicas</a>
-      <a href="proyectos.html" data-translate="nav_proyectos" class="hover:text-yellow-400 transition-colors">Proyectos</a>
-      <a href="ubicacio.html" data-translate="nav_location" class="hover:text-yellow-400 transition-colors">Ubicación</a>
-      <a href="donacion.html" data-translate="nav_donations" class="hover:text-yellow-400 transition-colors">Donaciones</a>
+    <div class="hidden md:flex gap-3 items-center">
+      <!-- Botón Leer la Biblia -->
+      <a href="https://www.bible.com/es" target="_blank" class="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all font-black text-[10px] uppercase tracking-widest shadow-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <span>Leer la Biblia</span>
+      </a>
+      <!-- Botón Música del día -->
+      <a href="https://www.youtube.com/results?search_query=musica+cristiana+del+dia" target="_blank" class="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all font-black text-[10px] uppercase tracking-widest shadow-lg">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        <span>Música del día</span>
+      </a>
+      <!-- Menú Secciones -->
+      <div class="relative">
+        <button id="sections-btn" class="flex items-center gap-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all font-black text-[10px] uppercase tracking-widest shadow-lg">
+           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+           <span>Secciones</span>
+           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div id="sections-menu" class="absolute right-0 mt-3 w-56 bg-[#1a1a2e]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl py-3 hidden flex-col z-[60]">
+           <a href="index.html" data-translate="nav_home" class="px-5 py-2.5 text-sm text-gray-300 hover:text-yellow-400 hover:bg-white/5 transition-all">Inicio</a>
+           <a href="predicas.html" data-translate="nav_predicas" class="px-5 py-2.5 text-sm text-gray-300 hover:text-yellow-400 hover:bg-white/5 transition-all">Predicas</a>
+           <a href="proyectos.html" data-translate="nav_proyectos" class="px-5 py-2.5 text-sm text-gray-300 hover:text-yellow-400 hover:bg-white/5 transition-all">Proyectos</a>
+           <a href="ubicacio.html" data-translate="nav_location" class="px-5 py-2.5 text-sm text-gray-300 hover:text-yellow-400 hover:bg-white/5 transition-all">Ubicación</a>
+           <a href="donacion.html" data-translate="nav_donations" class="px-5 py-2.5 text-sm text-gray-300 hover:text-yellow-400 hover:bg-white/5 transition-all text-yellow-400">Donaciones</a>
+        </div>
+      </div>
       <div class="relative">
         <button id="language-btn" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-yellow-600 hover:bg-yellow-500 transition-colors text-sm font-semibold" title="Cambiar idioma">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path><path d="M2 12h20"></path></svg>
@@ -58,6 +78,8 @@
   </div>
   <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-[100] bg-black/85 backdrop-blur-md flex items-start justify-center p-8 pt-28">
     <div class="w-fit min-w-[280px] max-h-[70vh] overflow-y-auto px-10 bg-white/10 backdrop-blur-3xl rounded-[3rem] shadow-2xl p-10 flex flex-col items-center gap-3 text-center border border-white/20">
+      <a href="https://www.bible.com/es" target="_blank" class="py-2 text-yellow-400 font-black text-xl hover:text-white transition-colors">Leer la Biblia</a>
+      <a href="https://www.youtube.com/results?search_query=musica+cristiana+del+dia" target="_blank" class="py-2 text-yellow-400 font-black text-xl hover:text-white transition-colors mb-4">Música del día</a>
       <a href="index.html" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Inicio</a>
       <a href="predicas.html" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Predicas</a>
       <a href="proyectos.html" class="py-2 text-white font-black text-xl hover:text-yellow-400 transition-colors">Proyectos</a>

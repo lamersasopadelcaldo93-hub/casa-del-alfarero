@@ -62,6 +62,159 @@ function setupTouchHover() {
   document.addEventListener('touchcancel', clearTouchHoverClasses, { passive: true });
 }
 
+// Método para obtener y reproducir música cristiana que rota cada 24 horas
+function setupDailyMusic() {
+  const musicIframe = document.getElementById('daily-video-iframe');
+  if (!musicIframe) return;
+
+  // Lista curada de música cristiana de YouTube - Videos verificados y disponibles
+  const dailyVideos = [
+    'fT_eIuYhD2U', // No Hay Lugar Más Alto - Miel San Marcos (Versión Live compatible)
+    'pYvNid8A7s0', // Te Doy Gloria - En Espíritu y en Verdad
+    '40W59Z5Lndc', // Como Dijiste - Christine D'Clario
+    '7pL6v_9B0rA', // Hermoso Nombre - Hillsong
+    'P5S5_Y0L08s', // Way Maker - Sinach
+    'sOny9N6uOsw', // Hosanna - Marco Barrientos
+    'X_m8R6p89c4'  // Creo en Ti - Julio Melgar
+  ];
+
+  // Lógica para cambiar el video automáticamente cada 24 horas basado en la fecha actual
+  const dayTimestamp = Math.floor(Date.now() / (1000 * 60 * 60 * 24));
+  const videoIndex = Math.abs(dayTimestamp % dailyVideos.length);
+  const selectedVideoId = dailyVideos[videoIndex];
+
+  // URL optimizada para evitar el error de "Video no disponible"
+  const finalUrl = `https://www.youtube.com/embed/${selectedVideoId}?autoplay=1&mute=1&rel=0`;
+  if (musicIframe.src !== finalUrl) musicIframe.src = finalUrl;
+}
+
+// --- Lógica de la Biblia y Constructor de Prédicas ---
+
+async function searchBibleVerse() {
+  const input = document.getElementById('bible-search-input');
+  const resultsDiv = document.getElementById('search-results');
+  const versionComparer = document.getElementById('version-comparer');
+  const webView = document.getElementById('bible-web-view');
+  const externalIframe = document.getElementById('bible-external-iframe');
+  const externalLink = document.getElementById('bg-external-link');
+  
+  const originalQuery = input.value.trim();
+  if (!originalQuery) return;
+
+  resultsDiv.classList.remove('hidden');
+  resultsDiv.innerHTML = '<div class="flex justify-center"><div class="animate-spin rounded-full h-8 w-8 border-b-2 border-yellow-600"></div></div>';
+
+  // 1. Integrar BibleGateway de forma interna (Iframe + Link de respaldo)
+  // Usamos el formato de URL que proporcionaste: search=CITA&version=RVR1960
+  const bgUrl = `https://www.biblegateway.com/passage/?search=${encodeURIComponent(originalQuery)}&version=RVR1960`;
+  if (externalIframe) externalIframe.src = bgUrl;
+  if (externalLink) externalLink.href = bgUrl;
+  if (webView) webView.classList.remove('hidden');
+
+  // Mapa de libros para traducir de Español a Inglés (requerido por la API estable)
+  const bookMap = {
+    'genesis': 'genesis', 'exodo': 'exodus', 'levitico': 'leviticus', 'numeros': 'numbers', 'deuteronomio': 'deuteronomy',
+    'josue': 'joshua', 'jueces': 'judges', 'rut': 'ruth', '1 samuel': '1 samuel', '2 samuel': '2 samuel',
+    '1 reyes': '1 kings', '2 reyes': '2 kings', '1 cronicas': '1 chronicles', '2 cronicas': '2 chronicles',
+    'esdras': 'ezra', 'nehemias': 'nehemiah', 'ester': 'esther', 'job': 'job', 'salmos': 'psalms', 'salmo': 'psalms',
+    'proverbios': 'proverbs', 'eclesiastes': 'ecclesiastes', 'cantares': 'song of solomon', 'isaias': 'isaiah',
+    'jeremias': 'jeremiah', 'lamentaciones': 'lamentations', 'ezequiel': 'ezekiel', 'daniel': 'daniel',
+    'oseas': 'hosea', 'joel': 'joel', 'amos': 'amos', 'abdias': 'obadiah', 'jonas': 'jonah', 'miqueas': 'micah',
+    'nahum': 'nahum', 'habacuc': 'habakkuk', 'sofonias': 'zephaniah', 'hageo': 'haggai', 'zacarias': 'zechariah',
+    'malaquias': 'malachi', 'mateo': 'matthew', 'marcos': 'mark', 'lucas': 'luke', 'juan': 'john', 'hechos': 'acts',
+    'romanos': 'romans', '1 corintios': '1 corinthians', '2 corintios': '2 corinthians', 'galatas': 'galatians',
+    'efesios': 'ephesians', 'filipenses': 'philippians', 'colosenses': 'colossians', '1 tesalonicenses': '1 letters',
+    '2 tesalonicenses': '2 thessalonians', '1 timoteo': '1 timothy', '2 timoteo': '2 timothy', 'tito': 'titus',
+    'filemon': 'philemon', 'hebreos': 'hebrews', 'santiago': 'james', '1 pedro': '1 peter', '2 pedro': '2 peter',
+    '1 juan': '1 john', '2 juan': '2 john', '3 juan': '3 john', 'judas': 'jude', 'apocalipsis': 'revelation', 'revelacion': 'revelation'
+  };
+
+  // Normalizar la búsqueda
+  let normalizedQuery = originalQuery.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  
+  // Reemplazar el nombre del libro en español por el de inglés para la API
+  for (const [esp, eng] of Object.entries(bookMap)) {
+    if (normalizedQuery.startsWith(esp)) {
+      normalizedQuery = normalizedQuery.replace(esp, eng);
+      break;
+    }
+  }
+
+  try {
+    // Usamos bible-api.com con rvr1960. Es la más rápida y no tiene bloqueos de conexión.
+    const response = await fetch(`https://bible-api.com/${encodeURIComponent(normalizedQuery)}?translation=rvr1960`);
+    
+    if (!response.ok) throw new Error('Cita no encontrada');
+    
+    const data = await response.json();
+    versionComparer.classList.remove('hidden');
+    
+    // Limpiar texto y formatear referencia
+    const textClean = data.text.trim().replace(/\n/g, ' ');
+    const reference = data.reference;
+    
+    let versesHtml = `
+      <div class="text-left animate-fade-up">
+        <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-4">Extraído para tu prédica:</p>
+        <div class="mb-4 p-4 bg-gray-50 rounded-2xl border-l-4 border-yellow-500 group/verse hover:bg-yellow-50 transition-all">
+          <h4 class="font-bold text-[#1a1a2e] text-sm mb-1">${reference}</h4>
+          <p class="text-gray-700 italic text-sm mb-3">"${textClean}"</p>
+          <button onclick="addVerseToSermon('${reference}', '${textClean.replace(/'/g, "\\'")}')" class="w-full py-2 bg-white text-yellow-700 border border-yellow-200 rounded-xl text-[10px] font-black uppercase hover:bg-yellow-500 hover:text-white transition-all shadow-sm">
+            Añadir a la prédica
+          </button>
+        </div>
+      </div>`;
+    
+    resultsDiv.innerHTML = versesHtml;
+  } catch (error) {
+    console.error('Bible Search Error:', error);
+    // Ocultamos el contenedor de resultados de texto para que solo se vea el visor de BibleGateway de abajo
+    resultsDiv.classList.add('hidden');
+    versionComparer.classList.add('hidden');
+  }
+}
+
+function addVerseToSermon(ref, text) {
+  const editor = document.getElementById('sermon-editor');
+  const verseHtml = `
+    <div class="my-4 p-4 bg-gray-50 border-l-4 border-yellow-500 rounded-r-xl" contenteditable="false">
+      <p class="font-bold text-[#1a1a2e] mb-1">${ref}</p>
+      <p class="italic text-gray-600">"${text}"</p>
+    </div>
+    <p><br></p>
+  `;
+  editor.innerHTML += verseHtml;
+  editor.focus();
+}
+
+function openExternalBible(version) {
+  const input = document.getElementById('bible-search-input').value;
+  if (!input) return;
+  const baseUrl = "https://www.biblegateway.com/passage/?search=";
+  window.open(`${baseUrl}${encodeURIComponent(input)}&version=${version}`, '_blank', 'width=800,height=600');
+}
+
+function exportToWord() {
+  const title = document.getElementById('sermon-title').value || 'Sin_Titulo';
+  const content = document.getElementById('sermon-editor').innerHTML;
+  const preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Prédica</title></head><body><h1 style='font-family:serif; color:#1a1a2e;'>" + title + "</h1>";
+  const postHtml = "</body></html>";
+  const html = preHtml + content + postHtml;
+  
+  const blob = new Blob(['\ufeff', html], { type: 'application/msword' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${title.replace(/\s+/g, '_')}.doc`;
+  link.click();
+}
+
+function exportToPDF() {
+  const element = document.getElementById('sermon-editor').parentElement;
+  const opt = { margin: 1, filename: (document.getElementById('sermon-title').value || 'Predica') + '.pdf', image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2 }, jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' } };
+  html2pdf().set(opt).from(element).save();
+}
+
 // Función para actualizar idioma
 function updateLanguage() {
   const lang = localStorage.getItem('language') || 'es';
@@ -107,23 +260,45 @@ if (hamburgerBtn && mobileMenu && hamburgerIcon && closeIcon) {
 document.addEventListener('DOMContentLoaded', () => {
   updateLanguage();
   setupTouchHover();
+  setupDailyMusic();
+
+  // Inicializar iconos de Lucide si la librería está cargada
+  if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+  }
 
   // Selector de idiomas (escritorio)
   const languageBtn = document.getElementById('language-btn');
   const languageMenu = document.getElementById('language-menu');
+  const sectionsBtn = document.getElementById('sections-btn');
+  const sectionsMenu = document.getElementById('sections-menu');
 
   if (languageBtn && languageMenu) {
     languageBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       languageMenu.classList.toggle('hidden');
-    });
-
-    document.addEventListener('click', (e) => {
-      if (!languageMenu.classList.contains('hidden') && !languageBtn.contains(e.target) && !languageMenu.contains(e.target)) {
-        languageMenu.classList.add('hidden');
-      }
+      if (sectionsMenu) sectionsMenu.classList.add('hidden');
     });
   }
+
+  if (sectionsBtn && sectionsMenu) {
+    sectionsBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      sectionsMenu.classList.toggle('hidden');
+      sectionsMenu.classList.toggle('flex');
+      if (languageMenu) languageMenu.classList.add('hidden');
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (languageMenu && !languageMenu.classList.contains('hidden') && !languageBtn.contains(e.target) && !languageMenu.contains(e.target)) {
+      languageMenu.classList.add('hidden');
+    }
+    if (sectionsMenu && !sectionsMenu.classList.contains('hidden') && !sectionsBtn.contains(e.target) && !sectionsMenu.contains(e.target)) {
+      sectionsMenu.classList.add('hidden');
+      sectionsMenu.classList.remove('flex');
+    }
+  });
 });
 
 const sectionLogoBackgrounds = document.querySelectorAll('.section-logo-bg');
@@ -222,7 +397,16 @@ const albumData = {
     ]
   },
   proyecto: {
-    title: 'Proyecto',
+    title: 'Proyectos a Futuro',
+    description: 'Imágenes de los avances y planos de la construcción de nuestra iglesia.',
+    images: [
+      'imagenes/proyectos-iglesia/WhatsApp Image 2026-05-21 at 4.24.35 PM.jpeg',
+      'imagenes/proyectos-iglesia/WhatsApp Image 2026-05-22 at 7.17.20 AM.jpeg',
+      'imagenes/proyectos-iglesia/WhatsApp Image 2026-05-22 at 7.17.43 AM.jpeg'
+    ]
+  },
+  cdi: {
+    title: 'CDI - Ovejitas de jesus',
     description: 'Imágenes de los proyectos y actividades de crecimiento comunitario.',
     images: [
       'imagenes/proyecto/WhatsApp Image 2026-05-04 at 7.21.28 PM (1).jpeg',
@@ -359,6 +543,7 @@ function closeAlbum() {
 function openLightbox(src) {
   if (!lightbox || !lightboxImg) return;
   lightboxImg.src = src;
+  lightboxImg.classList.remove('scale-[2]', 'cursor-zoom-out');
   lightbox.classList.remove('hidden');
   lightbox.classList.add('flex');
 }
@@ -367,6 +552,14 @@ function closeLightbox() {
   if (!lightbox) return;
   lightbox.classList.add('hidden');
   lightbox.classList.remove('flex');
+}
+
+if (lightboxImg) {
+  lightboxImg.addEventListener('click', (e) => {
+    e.stopPropagation(); // Evita que el clic cierre el lightbox
+    lightboxImg.classList.toggle('scale-[2]');
+    lightboxImg.classList.toggle('cursor-zoom-out');
+  });
 }
 
 if (lightbox) lightbox.addEventListener('click', closeLightbox);
