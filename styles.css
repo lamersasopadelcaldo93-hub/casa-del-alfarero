@@ -386,6 +386,14 @@ body {
   }
 }
 
+@media (min-width: 1024px) {
+  /* Tres columnas en pantallas grandes (filas horizontales) */
+  #ministerios .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
 .folder-card-content {
   padding: 1.5rem;
   background: rgba(26, 26, 46, 0.95);
@@ -765,51 +773,92 @@ footer {
   display: block;
 }
 
-/* Efecto de resalte celeste para imágenes de actividades */
-.activity-img-container {
+/* Efecto de resalte celeste para el contenedor de actividades (carrusel) */
+.activity-carousel {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.folder-card:hover .activity-img-container,
-.folder-card.touch-hover .activity-img-container {
+.folder-card:hover .activity-carousel,
+.folder-card.touch-hover .activity-carousel {
   box-shadow: 0 0 50px rgba(94, 211, 243, 0.8), 0 0 20px rgba(94, 211, 243, 0.4) !important;
   border-color: #5ed3f3 !important;
   transform: scale(1.02);
 }
 
-/* Mostrar botón de álbum en móvil al tocar el contenedor */
-.folder-card.touch-hover button[data-album] {
-  opacity: 1 !important;
-}
-
-/* Carrusel Vertical Automático para Actividades */
+/* Carrusel Vertical Automático para Actividades (ocupa todo el contenedor) */
 .activity-carousel {
-  height: 120px;
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  border: 2px solid rgba(212, 175, 105, 0.2);
   background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .activity-carousel-track {
   display: flex;
   flex-direction: column;
-  animation: activity-slide-up 10s infinite ease-in-out;
+  height: 400%;
+  animation: activity-slide-up 14s infinite ease-in-out;
 }
 
 .activity-carousel-track img {
-  height: 120px;
   width: 100%;
+  height: 25%;
   object-fit: cover;
   flex-shrink: 0;
 }
 
 @keyframes activity-slide-up {
   0%, 20% { transform: translateY(0); }
-  25%, 45% { transform: translateY(-120px); }
-  50%, 70% { transform: translateY(-240px); }
-  75%, 95% { transform: translateY(-360px); }
+  25%, 45% { transform: translateY(-25%); }
+  50%, 70% { transform: translateY(-50%); }
+  75%, 95% { transform: translateY(-75%); }
   100% { transform: translateY(0); }
+}
+
+/* Información (título, descripción y botón) superpuesta DENTRO del carrusel:
+   solo visible al pasar el mouse o al tocar en móvil */
+.activity-info {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1.75rem 1.25rem 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.6) 55%, rgba(0,0,0,0) 100%);
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.folder-card:hover .activity-info,
+.folder-card.touch-hover .activity-info {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Actividades (#ministerios): quitar la caja azul y que la imagen/carrusel sea el contenedor */
+#ministerios .folder-card {
+  background: transparent;
+  backdrop-filter: none;
+  border-color: transparent;
+  box-shadow: none;
+  padding: 0;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+#ministerios .folder-card:hover {
+  transform: none;
+  box-shadow: none;
 }
 
 /* Animación Incandescente para el punto de YouTube */
