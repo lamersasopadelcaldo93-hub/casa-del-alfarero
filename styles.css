@@ -773,15 +773,15 @@ footer {
   display: block;
 }
 
-/* Efecto de resalte celeste para el contenedor de actividades (carrusel) */
+/* Efecto de resalte dorado para el contenedor de actividades (carrusel) */
 .activity-carousel {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .folder-card:hover .activity-carousel,
 .folder-card.touch-hover .activity-carousel {
-  box-shadow: 0 0 50px rgba(94, 211, 243, 0.8), 0 0 20px rgba(94, 211, 243, 0.4) !important;
-  border-color: #5ed3f3 !important;
+  box-shadow: 0 0 50px rgba(212, 175, 105, 0.6), 0 0 20px rgba(212, 175, 105, 0.35) !important;
+  border-color: #d4af69 !important;
   transform: scale(1.02);
 }
 
@@ -789,7 +789,7 @@ footer {
 .activity-carousel {
   position: relative;
   width: 100%;
-  max-width: 380px;
+  max-width: 440px;
   margin: 0 auto;
   aspect-ratio: 1 / 1;
   overflow: hidden;
@@ -852,13 +852,78 @@ footer {
   border-color: transparent;
   box-shadow: none;
   padding: 0;
-  max-width: 380px;
+  max-width: 440px;
   margin: 0 auto;
 }
 
 #ministerios .folder-card:hover {
   transform: none;
   box-shadow: none;
+}
+
+/* CDI (#cdi-gallery, #cdi-video): la imagen/video es el contenedor, sin caja azul, overlay al hover/tocar */
+#cdi-gallery,
+#cdi-video {
+  background: transparent;
+  backdrop-filter: none;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+#cdi-gallery:hover,
+#cdi-video:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+#cdi-gallery .activity-img-container,
+#cdi-video .activity-img-container {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#cdi-gallery:hover .activity-img-container,
+#cdi-gallery.touch-hover .activity-img-container,
+#cdi-video:hover .activity-img-container,
+#cdi-video.touch-hover .activity-img-container {
+  border-color: #d4af69;
+  box-shadow: 0 0 40px rgba(212, 175, 105, 0.5), 0 0 18px rgba(212, 175, 105, 0.3);
+  transform: scale(1.02);
+}
+
+.cdi-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 2.5rem 1.5rem 1.5rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0) 100%);
+  border-bottom-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.5rem;
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+#cdi-gallery:hover .cdi-overlay,
+#cdi-gallery.touch-hover .cdi-overlay,
+#cdi-video:hover .cdi-overlay,
+#cdi-video.touch-hover .cdi-overlay {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* En el video, el overlay va arriba para no tapar los controles (volumen/pantalla completa) */
+#cdi-video .cdi-overlay {
+  top: 0;
+  bottom: auto;
+  padding: 1.5rem 1.5rem 2.5rem;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 55%, rgba(0,0,0,0) 100%);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 2.5rem;
+  border-top-right-radius: 2.5rem;
 }
 
 /* Animación Incandescente para el punto de YouTube */
