@@ -829,3 +829,142 @@
     padding: 1rem 2rem;
   }
 }
+
+/* ===== Ajustes para la nueva estructura de donaciones ===== */
+.bank-grid.two-columns {
+  display: flex;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.donation-column {
+  flex: 1;
+  min-width: 260px;
+}
+
+.donation-bank-card {
+  border-radius: 16px;
+  background: white;
+  padding: 1.5rem;
+  border: 1px solid rgba(212,175,105,0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  text-align: center;
+}
+
+.logos-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.donation-bank-card .bank-logo {
+  max-width: 140px;
+  padding: 8px;
+  background: transparent;
+}
+
+.currency-badge {
+  display: inline-block;
+  background: #f6eddc;
+  color: #1a1a2e;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  margin-top: 6px;
+}
+
+.currency-badge.badge-blue {
+  background: #103458;
+  color: #ffffff;
+}
+
+.account-number .acc {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  letter-spacing: 1.2px;
+}
+
+.account-number .acc.pending {
+  color: #8b8b8b;
+  font-style: italic;
+}
+
+.account-number .acc-name {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.donation-hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.donation-title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 900;
+  color: #111827;
+  margin: 0;
+  line-height: 1.05;
+}
+
+.donation-subtitle {
+  font-size: 1.05rem;
+  color: #475569;
+  max-width: 760px;
+  margin: 1rem auto 0;
+  line-height: 1.8;
+}
+
+.section-sub {
+  display: block;
+  margin-top: 0.75rem;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.95rem;
+  max-width: 640px;
+  text-align: center;
+  line-height: 1.7;
+}
+
+.grateful-card {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.35rem;
+  margin-top: 1.75rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.grateful-icon {
+  font-size: 1.6rem;
+  background: #f8fafc;
+  padding: 0.85rem;
+  border-radius: 14px;
+}
+
+.grateful-text h4 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #111827;
+}
+
+.grateful-text p {
+  margin: 0.5rem 0 0;
+  color: #475569;
+  line-height: 1.75;
+}
+
+@media (max-width: 992px) {
+  .bank-grid.two-columns {
+    flex-direction: column;
+  }
+}
